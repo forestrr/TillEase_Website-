@@ -7,12 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x1B1F2A, 0.025);
 
-  const camera = new THREE.PerspectiveCamera(50, canvas.parentElement.clientWidth / canvas.parentElement.clientHeight, 0.1, 1000);
-  camera.position.set(0, 5, 25);
+  const aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
+  const camera = new THREE.PerspectiveCamera(50, aspect, 0.1, 1000);
+  
+  if (window.innerWidth < 768) {
+    camera.position.set(10, 5, 30); // Shift right and zoom out slightly for mobile
+    camera.lookAt(5, 0, 0);
+  } else {
+    camera.position.set(0, 5, 25); // Original desktop positioning
+    camera.lookAt(0, 0, 0);
+  }
 
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setSize(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // --- Scroll Observer for Fade-ins ---
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   // --- Materials ---
   const neonLineMat = new THREE.LineBasicMaterial({ color: 0xC6FF3E, transparent: true, opacity: 0.8 });
@@ -364,9 +380,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const wordEls = document.querySelectorAll('.scramble');
     
-    wordEls.forEach(el => {
-      el.addEventListener('mouseover', scrambleText);
-      scrambleText({target: el}); // Run on load
+    document.fonts.ready.then(() => {
+      wordEls.forEach(el => {
+        el.addEventListener('mouseover', scrambleText);
+        scrambleText({target: el}); // Run on load
+      });
     });
   
     function scrambleText(event) {
@@ -377,14 +395,11 @@ document.addEventListener('DOMContentLoaded', () => {
       
       clearInterval(el.scrambleInterval);
       
-      // Prevent layout shifting by locking exact width and clipping overflow
-      if (!el.style.width) {
-        el.style.display = 'inline-block';
-        const rect = el.getBoundingClientRect();
-        el.style.width = rect.width + 2 + 'px';
-        el.style.overflow = 'hidden';
-        el.style.verticalAlign = 'bottom';
-      }
+      // Prevent layout shifting by locking exact width during the scramble
+      el.style.display = 'inline-block';
+      el.style.width = el.scrollWidth + 4 + 'px'; // +4px for safety
+      el.style.overflow = 'hidden';
+      el.style.verticalAlign = 'bottom';
       
       // Force neon color during animation
       const originalColor = el.style.color;
@@ -400,6 +415,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if(iteration >= originalText.length){
           clearInterval(el.scrambleInterval);
+          
+          // Unlock the width so the text can dynamically resize on window resize
+          el.style.width = '';
+          el.style.overflow = '';
+          
           // Only revert color if it's not permanently neon
           if (!el.classList.contains('scramble')) {
              el.style.color = originalColor;
@@ -414,6 +434,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('DOMContentLoaded', initScramble);
   } else {
     initScramble();
+  }
+
+  // --- Scroll Reveal Animations ---
+  const initScrollReveal = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.feat, .price-card, .split, .faq-item, .receipt').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollReveal);
+  } else {
+    initScrollReveal();
   }
 
   function animate() {
