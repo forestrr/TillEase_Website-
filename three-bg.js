@@ -10,22 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
   const camera = new THREE.PerspectiveCamera(50, aspect, 0.1, 1000);
   
-  let baseCamX = 0; let baseCamY = 5; let baseCamZ = 25;
-  let lookAtX = 0; let lookAtY = 3;
-  
-  function updateCameraBase() {
-    if (window.innerWidth < 768) {
-      baseCamX = 5; baseCamY = 8; baseCamZ = 35; // Zoom out and move camera slightly up
-      lookAtX = 0; lookAtY = 8; // Point camera up so objects render perfectly below the text
-    } else {
-      baseCamX = 0; baseCamY = 5; baseCamZ = 25;
-      lookAtX = 0; lookAtY = 3;
-    }
+  if (window.innerWidth < 768) {
+    camera.position.set(10, 5, 30); // Shift right and zoom out slightly for mobile
+    camera.lookAt(5, 0, 0);
+  } else {
+    camera.position.set(0, 5, 25); // Original desktop positioning
+    camera.lookAt(0, 0, 0);
   }
-  updateCameraBase();
-  
-  camera.position.set(baseCamX, baseCamY, baseCamZ);
-  camera.lookAt(lookAtX, lookAtY, 0);
 
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setSize(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
@@ -819,10 +810,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localPacket2.visible) { localPacket2.rotation.x += 0.1; localPacket2.rotation.y += 0.1; }
     if (cloudPacket.visible) { cloudPacket.rotation.x += 0.1; cloudPacket.rotation.y += 0.1; }
 
-    camera.position.x += 0.05 * (mouseX * 8 + baseCamX - camera.position.x);
-    camera.position.y += 0.05 * (-mouseY * 4 + baseCamY - camera.position.y);
-    camera.position.z += 0.05 * (baseCamZ - camera.position.z);
-    camera.lookAt(lookAtX, lookAtY, 0);
+    camera.position.x += 0.05 * (mouseX * 8 - camera.position.x);
+    camera.position.y += 0.05 * (-mouseY * 4 + 5 - camera.position.y);
+    camera.lookAt(0, 3, 0);
 
     renderer.render(scene, camera);
   }
@@ -831,7 +821,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', () => {
     if (!canvas.parentElement) return;
-    updateCameraBase();
     const width = canvas.parentElement.clientWidth;
     const height = canvas.parentElement.clientHeight;
     renderer.setSize(width, height);
