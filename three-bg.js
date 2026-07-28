@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Airport Board Text Scramble Effect ---
   const initScramble = () => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$*";
     const wordEls = document.querySelectorAll('.scramble');
     
     document.fonts.ready.then(() => {
@@ -462,7 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Prevent layout shifting by locking exact width during the scramble
       el.style.display = 'inline-block';
-      el.style.minWidth = el.getBoundingClientRect().width + 'px';
+      el.style.width = el.getBoundingClientRect().width + 'px';
+      el.style.overflow = 'hidden';
       el.style.whiteSpace = 'nowrap';
       el.style.verticalAlign = 'bottom';
       
@@ -475,14 +476,15 @@ document.addEventListener('DOMContentLoaded', () => {
           if(index < iteration) {
             return originalText[index];
           }
-          return letters[Math.floor(Math.random() * 26)];
+          return letters[Math.floor(Math.random() * letters.length)];
         }).join("");
         
         if(iteration >= originalText.length){
           clearInterval(el.scrambleInterval);
           
           // Unlock the width so the text can dynamically resize on window resize
-          el.style.minWidth = '';
+          el.style.width = '';
+          el.style.overflow = '';
           el.style.whiteSpace = '';
           
           // Only revert color if it's not permanently neon
