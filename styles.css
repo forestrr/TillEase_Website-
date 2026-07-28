@@ -90,6 +90,9 @@ header.site {
 }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; }
 .logo { display: flex; align-items: center; gap: 10px; }
+.brand-logo { height: 44px; width: auto; max-width: 100%; display: block; object-fit: contain; }
+@media (max-width: 768px) { .brand-logo { height: 32px; } }
+@media (max-width: 480px) { .brand-logo { height: 26px; } }
 .logo .mark { width: 32px; height: 32px; color: var(--ink); }
 .logo .word { font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--ink); letter-spacing: -0.02em; }
 
