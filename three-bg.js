@@ -381,9 +381,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordEls = document.querySelectorAll('.scramble');
     
     document.fonts.ready.then(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            scrambleText({target: entry.target});
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 }); // Trigger as soon as 10% is visible
+      
       wordEls.forEach(el => {
         el.addEventListener('mouseover', scrambleText);
-        scrambleText({target: el}); // Run on load
+        observer.observe(el);
       });
     });
   
@@ -397,8 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Prevent layout shifting by locking exact width during the scramble
       el.style.display = 'inline-block';
-      el.style.width = el.scrollWidth + 4 + 'px'; // +4px for safety
-      el.style.overflow = 'hidden';
+      el.style.minWidth = el.getBoundingClientRect().width + 'px';
+      el.style.whiteSpace = 'nowrap';
       el.style.verticalAlign = 'bottom';
       
       // Force neon color during animation
@@ -417,8 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
           clearInterval(el.scrambleInterval);
           
           // Unlock the width so the text can dynamically resize on window resize
-          el.style.width = '';
-          el.style.overflow = '';
+          el.style.minWidth = '';
+          el.style.whiteSpace = '';
           
           // Only revert color if it's not permanently neon
           if (!el.classList.contains('scramble')) {
