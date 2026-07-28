@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function updateCameraBase() {
     if (window.innerWidth < 768) {
-      baseCamX = 5; baseCamY = 15; baseCamZ = 45; // Zoom out more and move camera high up
-      lookAtX = 0; lookAtY = 15; // Point camera up so objects (at Y=0) render at the bottom
+      baseCamX = 5; baseCamY = 8; baseCamZ = 35; // Zoom out and move camera slightly up
+      lookAtX = 0; lookAtY = 8; // Point camera up so objects render perfectly below the text
     } else {
       baseCamX = 0; baseCamY = 5; baseCamZ = 25;
       lookAtX = 0; lookAtY = 3;
