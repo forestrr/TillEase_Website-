@@ -32,9 +32,10 @@
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+<section class="page-hero" style="position: relative; overflow: hidden; background: var(--navy); color: var(--off-white);">
+  <canvas id="hero-canvas" data-scenario="contact"></canvas>
+  <div class="wrap" style="position: relative; z-index: 1;">
+    <div class="breadcrumb"><a href="index.html" style="color: var(--off-white);">Home</a> / Contact</div>
     <span class="eyebrow">Let's talk</span>
     <h1>Book POS Demo UAE</h1>
     <p class="lead">Tell us a bit about your business and book a POS software free demo Dubai, Ajman, or anywhere in the UAE. We'll provide a walkthrough tailored to your industry.</p>
@@ -98,7 +99,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
           <div>
             <h4>Email</h4>
-            <p>Enquiries@tillease.co</p>
+            <p>support@tillease.co</p>
           </div>
         </div>
 
@@ -197,5 +198,7 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="three-bg.js"></script>
 </body>
 </html>

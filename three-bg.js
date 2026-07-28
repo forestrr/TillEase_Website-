@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let grocery1, grocery2, conveyorBelt;
   let ownerLaptop, laptopScreen;
   let posReceipt;
+  let creditCard, cardReader;
+  let contactPhone, contactScreen, envelope;
 
   // Custom Printer Generator (Detailed Thermal Printer)
   function createDetailedPrinter() {
@@ -304,6 +306,60 @@ document.addEventListener('DOMContentLoaded', () => {
     printerObj.position.set(0, -1, 2.5);
     printerObj.rotation.x = -0.8;
     screenBody.add(printerObj);
+
+  } else if (scenario === 'pricing') {
+    printerObj = createReceiptMesh(3, 6);
+    printerObj.position.set(0, -1, 2.5);
+    printerObj.rotation.x = -0.8;
+    screenBody.add(printerObj);
+
+    // Card Reader
+    cardReader = new THREE.Group();
+    const crBase = createBlueprintNode(new THREE.BoxGeometry(2, 4, 3), altLineMat);
+    const crSlot = createBlueprintNode(new THREE.BoxGeometry(0.2, 4.2, 3.2), neonLineMat);
+    crSlot.position.x = 1.1;
+    cardReader.add(crBase);
+    cardReader.add(crSlot);
+    cardReader.position.set(10, 0, 0); // attached to right side of pos
+    posGroup.add(cardReader);
+
+    // Credit Card
+    creditCard = createBlueprintNode(createRoundedBox(3.4, 2.1, 0.1, 0.2), neonLineMat);
+    scene.add(creditCard);
+
+  } else if (scenario === 'contact') {
+    printerObj = createReceiptMesh(3, 6);
+    printerObj.position.set(0, -1, 2.5);
+    printerObj.rotation.x = -0.8;
+    screenBody.add(printerObj);
+
+    // Contact Phone with UI
+    contactPhone = createBlueprintNode(createRoundedBox(3, 6, 0.2, 0.3), neonLineMat);
+    contactScreen = createDeviceScreen(2.8, 5.8, 300, 600);
+    contactScreen.mesh.position.z = 0.11;
+    contactPhone.add(contactScreen.mesh);
+    contactPhone.position.set(-10, 2, 4); 
+    contactPhone.rotation.y = 0.5;
+    scene.add(contactPhone);
+
+    // Envelope Mesh
+    envelope = new THREE.Group();
+    const envBody = createBlueprintNode(new THREE.BoxGeometry(2, 1.4, 0.1), neonLineMat);
+    envelope.add(envBody);
+    
+    // Envelope Flap
+    const flapGeo = new THREE.BufferGeometry();
+    const flapVerts = new Float32Array([
+       -1, 0.7, 0.05,
+        1, 0.7, 0.05,
+        0, -0.2, 0.1
+    ]);
+    flapGeo.setAttribute('position', new THREE.BufferAttribute(flapVerts, 3));
+    const flapMesh = new THREE.LineSegments(new THREE.EdgesGeometry(flapGeo), neonLineMat);
+    envelope.add(flapMesh);
+    
+    envelope.visible = false;
+    scene.add(envelope);
 
   } else {
     // Index (Homepage)
@@ -765,6 +821,127 @@ document.addEventListener('DOMContentLoaded', () => {
                printerObj.scale.y = Math.max(0.001, s);
                if (printerObj.material.map) { printerObj.material.map.repeat.y = -s; printerObj.material.map.offset.y = 1; }
                printerObj.material.opacity = 0.95 * (1 - (t > 7.0 ? (t - 7.0) * 1 : 0));
+           }
+       }
+    } 
+    // --- PRICING (10s) ---
+    else if (scenario === 'pricing') {
+       const t = time % 10;
+       
+       ctx.strokeRect(40, 40, 944, 600); 
+       ctx.font = 'bold 36px monospace'; ctx.fillText('TILLEASE / PRICING', 80, 100);
+       
+       // Draw some pricing lines
+       for(let i=0; i<3; i++) {
+         ctx.strokeRect(80, 150 + i*80, 600, 60);
+         if (t > 1.0) ctx.fillRect(700, 150 + i*80, 244, 60);
+         else ctx.strokeRect(700, 150 + i*80, 244, 60);
+       }
+       
+       // Credit Card swipe animation
+       if (creditCard) {
+           if (t < 2.0) {
+               // Float in
+               creditCard.position.lerpVectors(new THREE.Vector3(20, 5, 5), new THREE.Vector3(12, 1, 3), t / 2.0);
+               creditCard.rotation.x = Math.sin(t*2) * 0.2;
+           } else if (t < 4.0) {
+               // Swipe down through reader
+               let swipeP = (t - 2.0) / 2.0;
+               creditCard.position.set(12, 1 - swipeP*3, 3);
+           } else if (t < 5.0) {
+               // Float away
+               creditCard.position.lerpVectors(new THREE.Vector3(12, -2, 3), new THREE.Vector3(10, -5, 5), t - 4.0);
+           } else {
+               creditCard.position.set(20, 5, 5); // Hide/reset
+           }
+       }
+       
+       // Display "APPROVED"
+       if (t > 3.5 && t < 8.0) {
+           ctx.fillStyle = '#C6FF3E'; ctx.fillRect(80, 420, 864, 100);
+           ctx.fillStyle = '#1B1F2A'; ctx.font = 'bold 48px monospace'; ctx.fillText('APPROVED', 400, 485);
+       } else {
+           ctx.strokeRect(80, 420, 864, 100);
+       }
+
+       // Receipt prints
+       if (printerObj) {
+           if (t < 3.5) { printerObj.scale.y = 0.001; printerObj.material.opacity = 0; } 
+           else {
+               let s = 1 - Math.pow(1 - Math.min(1, Math.max(0, (t - 3.5) / 0.5)), 3);
+               printerObj.scale.y = Math.max(0.001, s);
+               if (printerObj.material.map) { printerObj.material.map.repeat.y = -s; printerObj.material.map.offset.y = 1; }
+               printerObj.material.opacity = 0.95 * (1 - (t > 8.0 ? (t - 8.0) * 1 : 0));
+           }
+       }
+       
+       // Cloud sync after transaction
+       if (t > 4.0 && t < 6.0) {
+           cloudPacket.visible = true;
+           cloudPacket.position.copy(cloudPaths[0].getPointAt((t - 4.0) / 2.0));
+       }
+    }
+    // --- CONTACT (12s) ---
+    else if (scenario === 'contact') {
+       const t = time % 12;
+       
+       ctx.strokeRect(40, 40, 944, 600); 
+       ctx.font = 'bold 36px monospace'; ctx.fillText('TILLEASE / SUPPORT DESK', 80, 100);
+       
+       // Draw incoming message queue
+       for(let i=0; i<3; i++) {
+         if(i === 0 && t > 4.0) ctx.fillRect(80, 150 + i*100, 864, 80); 
+         else ctx.strokeRect(80, 150 + i*100, 864, 80);
+       }
+
+       // Phone Animation
+       if (contactPhone) {
+           contactPhone.position.y = 2 + Math.sin(time * 2) * 0.5;
+           const pCtx = contactScreen.ctx;
+           pCtx.clearRect(0,0,300,600); pCtx.strokeStyle = '#FFFFFF'; pCtx.fillStyle = '#FFFFFF'; pCtx.lineWidth = 4;
+           pCtx.strokeRect(10,10,280,580);
+           pCtx.font = '24px monospace'; pCtx.fillText('NEW MESSAGE', 30, 60);
+           if (t < 1.0) {
+               pCtx.strokeRect(30, 100, 240, 300);
+           } else if (t < 2.0) {
+               pCtx.fillRect(30, 100, 240, 300); // typing/sending
+           } else {
+               pCtx.strokeRect(30, 100, 240, 300);
+           }
+           contactScreen.tex.needsUpdate = true;
+       }
+       
+       // Envelope flies from phone to POS
+       if (envelope) {
+           if (t > 2.0 && t < 4.0) {
+               envelope.visible = true;
+               envelope.position.lerpVectors(new THREE.Vector3(-10, 2, 4), posWorld, (t - 2.0) / 2.0);
+               envelope.rotation.y = time * 2;
+           } else {
+               envelope.visible = false;
+           }
+       }
+       
+       // Acknowledgement packet back to phone
+       if (t > 4.5 && t < 6.0) {
+           localPacket.visible = true;
+           localPacket.position.lerpVectors(posWorld, new THREE.Vector3(-10, 2, 4), (t - 4.5) / 1.5);
+       }
+       
+       // Cloud sync (ticketing system)
+       if (t > 5.0 && t < 7.0) {
+           cloudPacket.visible = true;
+           cloudPacket.position.copy(cloudPaths[1].getPointAt((t - 5.0) / 2.0));
+       }
+       
+       // Receipt (Ticket generated)
+       if (printerObj) {
+           if (t < 4.0) { printerObj.scale.y = 0.001; printerObj.material.opacity = 0; } 
+           else {
+               let s = 1 - Math.pow(1 - Math.min(1, Math.max(0, (t - 4.0) / 0.5)), 3);
+               printerObj.scale.y = Math.max(0.001, s);
+               if (printerObj.material.map) { printerObj.material.map.repeat.y = -s; printerObj.material.map.offset.y = 1; }
+               printerObj.material.opacity = 0.95 * (1 - (t > 9.0 ? (t - 9.0) * 1 : 0));
            }
        }
     } 

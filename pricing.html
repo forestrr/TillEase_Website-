@@ -33,9 +33,10 @@
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Pricing</div>
+<section class="page-hero" style="position: relative; overflow: hidden; background: var(--navy); color: var(--off-white);">
+  <canvas id="hero-canvas" data-scenario="pricing"></canvas>
+  <div class="wrap" style="position: relative; z-index: 1;">
+    <div class="breadcrumb"><a href="index.html" style="color: var(--off-white);">Home</a> / Pricing</div>
     <span class="eyebrow">Simple, upfront pricing</span>
     <h1>The Best POS Software Price UAE Small Businesses Can Trust.</h1>
     <p class="lead">TillEase is priced as a one-time software license plus an optional Annual Maintenance Contract (AMC) for ongoing support and updates. Exact POS system cost Dubai or Ajman businesses pay depends on branch count and modules — get a tailored quote below.</p>
@@ -202,5 +203,7 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="three-bg.js"></script>
 </body>
 </html>
