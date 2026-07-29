@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -121,12 +121,20 @@
     ]
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="TillEase Homepage">
       <picture>
         <source srcset="assets/logo.webp" type="image/webp">
         <img src="assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo">
@@ -195,7 +203,7 @@
             <textarea id="message" name="message" rows="4" placeholder="Number of branches, current system, anything else useful..."></textarea>
           </div>
           <button type="submit" class="btn btn-lime" style="width:100%; justify-content:center; padding:16px;">Book a free demo</button>
-          <p class="form-success" style="display:none; color:var(--lime); font-size:14px; margin-top:14px; padding:16px; border:2px solid var(--lime); font-weight:600; background:var(--ink);">Thanks — this form is a template. Connect it to your email or CRM to start receiving submissions.</p>
+          <p class="form-success" style="display:none; color:var(--lime); font-size:14px; margin-top:14px; padding:16px; border:2px solid var(--lime); font-weight:600; background:var(--ink);">Thanks â€” this form is a template. Connect it to your email or CRM to start receiving submissions.</p>
         </form>
       </div>
 
@@ -310,7 +318,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 TillEase Business Software Solutions</span>
+      <span>Â© 2026 TillEase Business Software Solutions</span>
       <span>Ajman, United Arab Emirates</span>
     </div>
   </div>
@@ -320,6 +328,7 @@
 <script src="three-bg.js" defer></script>
 </body>
 </html>
+
 
 
 

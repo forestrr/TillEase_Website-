@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -24,12 +24,20 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="TillEase Homepage">
       <picture>
         <source srcset="assets/logo.webp" type="image/webp">
         <img src="assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo">
@@ -100,7 +108,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 TillEase Business Software Solutions</span>
+      <span>Â© 2026 TillEase Business Software Solutions</span>
       <span>Ajman, United Arab Emirates</span>
     </div>
   </div>
@@ -110,4 +118,5 @@
 <script src="three-bg.js" defer></script>
 </body>
 </html>
+
 

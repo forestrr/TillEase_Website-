@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -118,12 +118,20 @@
     ]
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="TillEase Homepage">
       <picture>
         <source srcset="assets/logo.webp" type="image/webp">
         <img src="assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo">
@@ -176,13 +184,13 @@
       <div class="feat">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1" y="7" width="15" height="10" rx="1.5"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
         <h3>Driver app</h3>
-        <p>A true laundry POS system with driver app — pickup and delivery drivers get their own app for routes and confirmations.</p>
+        <p>A true laundry POS system with driver app â€” pickup and delivery drivers get their own app for routes and confirmations.</p>
       </div>
 
       <div class="feat">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.38 8.38 0 0 1-9.9 8.25 8.5 8.5 0 0 1-4.16-1.56L3 20l1.9-3.83A8.38 8.38 0 0 1 3.5 11.5 8.5 8.5 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
         <h3>WhatsApp order updates</h3>
-        <p>Customers get automatic status messages — no more phone calls asking "is it ready yet?"</p>
+        <p>Customers get automatic status messages â€” no more phone calls asking "is it ready yet?"</p>
       </div>
 
       <div class="feat">
@@ -213,7 +221,7 @@
       <div>
         <span class="eyebrow">Built for scale</span>
         <h2>One system for every branch and driver</h2>
-        <p>As laundry businesses grow past a single counter, keeping branches, drivers, and customer updates in sync gets hard fast. TillEase Laundry is built cloud-first specifically for that multi-branch reality — with secure payments and real-time status handled for you.</p>
+        <p>As laundry businesses grow past a single counter, keeping branches, drivers, and customer updates in sync gets hard fast. TillEase Laundry is built cloud-first specifically for that multi-branch reality â€” with secure payments and real-time status handled for you.</p>
         <ul class="check-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Real-time status across every branch</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Driver app for pickup and delivery</li>
@@ -222,11 +230,11 @@
       </div>
       <div class="receipt">
         <h3>Order Status</h3>
-        <p style="font-size:13px; color:#97A0B3; margin-bottom:0;">Order #4821 · Downtown Branch</p>
+        <p style="font-size:13px; color:#97A0B3; margin-bottom:0;">Order #4821 Â· Downtown Branch</p>
         <div class="divider"></div>
         <ul>
-          <li><span>Dropped off</span><b>✓ Mon 9:14am</b></li>
-          <li><span>Washing</span><b>✓ In progress</b></li>
+          <li><span>Dropped off</span><b>âœ“ Mon 9:14am</b></li>
+          <li><span>Washing</span><b>âœ“ In progress</b></li>
           <li><span>Driver assigned</span><b>Ali M.</b></li>
         </ul>
         <div class="divider"></div>
@@ -313,7 +321,7 @@
     <div class="cta-band">
       <span class="eyebrow">See it running</span>
       <h2>See how multi-branch laundry tracking works</h2>
-      <p>We'll walk through order tracking, the driver app, and customer updates — live.</p>
+      <p>We'll walk through order tracking, the driver app, and customer updates â€” live.</p>
       <div class="hero-actions">
         <a href="contact" class="btn btn-lime">Book a free demo</a>
       </div>
@@ -358,7 +366,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 TillEase Business Software Solutions</span>
+      <span>Â© 2026 TillEase Business Software Solutions</span>
       <span>Ajman, United Arab Emirates</span>
     </div>
   </div>
@@ -368,6 +376,7 @@
   <script src="three-bg.js" defer></script>
 </body>
 </html>
+
 
 
 
