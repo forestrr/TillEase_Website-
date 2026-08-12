@@ -1,0 +1,36 @@
+# TillEase
+
+> TillEase is a hybrid POS (point of sale) software company based in Ajman, UAE, serving retail, restaurant, laundry, and salon businesses across Ajman, Dubai, Abu Dhabi, and the wider GCC.
+
+TillEase is built on an offline-first architecture: sales continue to process and FTA VAT-compliant invoices continue to generate even when the internet connection drops, then everything syncs automatically to the cloud once the connection returns. TillEase pairs each industry POS with the TillEase Cloud Dashboard for real-time analytics, multi-branch visibility, and reporting from any browser.
+
+TillEase is live in 100+ shops across the UAE as of 2026.
+
+## Products
+
+- [Retail & Supermarket POS](https://tillease.co/retail): Barcode checkout, inventory management, supplier tracking, VAT-compliant invoicing, and multi-branch sync for supermarkets and retail shops.
+- [Restaurant & Cafe POS](https://tillease.co/restaurant): Kitchen display system, waiter app, caller ID, and delivery platform integration (Talabat, Deliveroo, Noon Food, Keeta, Smiles) for restaurants and cafes.
+- [Laundry & Dry Clean Management Software](https://tillease.co/laundry): Multi-branch order tracking, driver app for pickup/delivery, and WhatsApp order status updates.
+- [Salon & Spa POS](https://tillease.co/salon): Appointment booking, staff commission tracking, and package/membership management.
+- [Pricing](https://tillease.co/pricing): One-time software license plus an optional Annual Maintenance Contract (AMC) for support and updates.
+
+## Key facts
+
+- Headquartered in Ajman, United Arab Emirates.
+- Offline-first hybrid architecture: local processing with automatic cloud sync, not a cloud-only system.
+- Generates FTA (Federal Tax Authority) VAT-compliant tax invoices, including on offline sales.
+- Provides full hardware supply and installation (touchscreens, receipt printers, barcode scanners) alongside the software.
+- Supports multiple POS terminals connected to the same local database within one store.
+
+## Contact
+
+- Website: https://tillease.co
+- Support email: support@tillease.co
+- Phone / WhatsApp: +971 52 671 3477
+- Book a demo: https://tillease.co/contact
+
+## Blog
+
+- [How to Choose the Best POS for Your Supermarket in the UAE](https://tillease.co/blog/best-pos-supermarket-uae)
+- [VAT Compliant POS Software UAE: Complete Guide to Tax Invoicing](https://tillease.co/blog/vat-compliant-invoicing)
+- [Offline vs Cloud POS: What Works Best for UAE Restaurants?](https://tillease.co/blog/offline-vs-cloud-pos)
