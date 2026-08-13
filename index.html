@@ -40,7 +40,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/styles.css">
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -50,7 +50,7 @@
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <link rel="icon" type="image/png" href="assets/icon2.png">
+  <link rel="icon" type="image/png" href="/assets/icon2.png">
 
   <script type="application/ld+json">
 
@@ -139,6 +139,25 @@
   {
 
     "@context": "https://schema.org",
+
+    "@type": "BreadcrumbList",
+
+    "itemListElement": [
+
+      {
+
+        "@type": "ListItem",
+
+        "position": 1,
+
+        "name": "Home",
+
+        "item": "https://tillease.co/"
+
+      }
+
+    ]
+
   }
   </script>
   <script type="application/ld+json">
@@ -151,7 +170,7 @@
         "name": "Does the POS work without internet in the UAE?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. TillEase is designed as an offline-first POS software. You can continue ringing up sales, printing receipts, and managing your queue even if your internet connection in Dubai, Sharjah, or Ajman completely drops. Data syncs automatically once you are back online. According to recent surveys, small businesses in the UAE can lose up to 15% of daily revenue during sudden internet outages when using traditional cloud-only systems. TillEase solves this by storing your entire product database locally on your terminal. This means your checkout speed is instantaneous, scanning barcodes and processing payments without waiting for a server response. Whether you are running a busy supermarket in Abu Dhabi or a high-traffic salon in Dubai, your operations never halt. When your internet connection is restored, the local server pushes all transactions to your TillEase Cloud Dashboard quietly in the background. This hybrid architecture ensures 100% uptime for your retail business regardless of Etisalat or Du network stability."
+          "text": "Yes. TillEase is designed as an offline-first POS software. You can continue ringing up sales, printing receipts, and managing your queue even if your internet connection completely drops. TillEase stores your entire product database locally on your terminal, so checkout speed is instant and never waits on a server response. When your connection is restored, the local server pushes all transactions to your TillEase Cloud Dashboard automatically in the background, so your operations never halt."
         }
       },
       {
@@ -159,7 +178,7 @@
         "name": "Is TillEase VAT compliant in the UAE?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. Our POS system generates fully FTA VAT-compliant invoices, including accurate tax breakdowns on every receipt, ensuring your business software solutions meet UAE regulatory standards. Since the introduction of VAT in the UAE, the Federal Tax Authority requires specific details on every tax invoice, such as the TRN (Tax Registration Number), net value, VAT amount at 5%, and the gross total. TillEase automatically calculates and formats this information for every transaction. Furthermore, because of our offline-first architecture, your system continues to generate these legally required tax invoices even without an internet connection, ensuring you are never forced to issue non-compliant handwritten receipts during an outage. All your tax data is perfectly synced to the cloud dashboard when the connection returns, allowing your accountant to export precise VAT reports at the end of the quarter, eliminating manual reconciliation errors and avoiding FTA penalties."
+          "text": "Absolutely. TillEase generates fully FTA VAT-compliant invoices, including the TRN, net value, VAT amount, and gross total on every receipt. Because of our offline-first architecture, the system keeps generating these legally required tax invoices even without an internet connection, so you're never forced to issue a non-compliant handwritten receipt during an outage. All tax data syncs to the cloud dashboard once the connection returns, so your accountant can export accurate VAT reports at quarter-end."
         }
       },
       {
@@ -204,23 +223,23 @@
   <div class="wrap">
     <a href="/" class="logo" aria-label="TillEase Homepage">
       <picture>
-        <source srcset="assets/logo.webp" type="image/webp">
-        <img src="assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo">
+        <source srcset="/assets/logo.webp" type="image/webp">
+        <img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo">
       </picture>
     </a>
     <nav class="primary">
       <ul>
-        <li><a href="retail">Retail</a></li>
-        <li><a href="restaurant">Restaurant</a></li>
-        <li><a href="laundry">Laundry</a></li>
-        <li><a href="salon">Salon</a></li>
+        <li><a href="/retail">Retail</a></li>
+        <li><a href="/restaurant">Restaurant</a></li>
+        <li><a href="/laundry">Laundry</a></li>
+        <li><a href="/salon">Salon</a></li>
         <li><a href="/blog/">Blog</a></li>
-        <li><a href="pricing">Pricing</a></li>
+        <li><a href="/pricing">Pricing</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="contact" class="btn btn-ghost">Contact</a>
-      <a href="contact" class="btn btn-lime">Book a demo</a>
+      <a href="/contact" class="btn btn-ghost">Contact</a>
+      <a href="/contact" class="btn btn-lime">Book a demo</a>
     </div>
   </div>
 </header>
@@ -232,7 +251,7 @@
     <h1>Smart, fast management software built for the UAE.</h1>
     <p class="lead">TillEase is a hybrid POS software designed for UAE small businesses, including retail, restaurants, laundries, and salons. Built with an offline-first architecture, it ensures your cash register stays open and generates FTA VAT-compliant invoices even when the internet drops. When your connection returns, it seamlessly syncs your operations to the cloud.</p>
     <div class="hero-actions">
-      <a href="contact" class="btn btn-lime">Book a free demo</a>
+      <a href="/contact" class="btn btn-lime">Book a free demo</a>
       <a href="#verticals" class="btn btn-ghost">See your industry</a>
     </div>
     <p class="hero-note">Live in supermarkets, restaurants, and laundries across Ajman and the GCC.</p>
@@ -257,28 +276,28 @@
     </div>
     <div class="vert-grid">
 
-      <a href="retail" class="vert-card">
+      <a href="/retail" class="vert-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l1.5-5h15L21 9"/><path d="M4.5 9v10.5A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5V9"/><path d="M9 21v-6h6v6"/></svg>
         <h3>Retail & Supermarket</h3>
         <p>Barcode checkout, inventory, and supplier tracking that keeps ringing through outages.</p>
         <span class="go">Explore Retail →</span>
       </a>
 
-      <a href="restaurant" class="vert-card">
+      <a href="/restaurant" class="vert-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3v7a2 2 0 0 0 4 0V3M7 3v7M11 3v7"/><path d="M17 3c-1.5 1.2-2 2.8-2 4.5S16 11 17 11v10"/></svg>
         <h3>Restaurant & Cafe</h3>
         <p>Kitchen display, waiter app, caller ID, and delivery orders from one screen.</p>
         <span class="go">Explore Restaurant →</span>
       </a>
 
-      <a href="laundry" class="vert-card">
+      <a href="/laundry" class="vert-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="13" r="6"/><circle cx="12" cy="13" r="2.5"/><path d="M8 4h8M9 4V2.5M15 4V2.5"/></svg>
         <h3>Laundry & Dry Clean</h3>
         <p>Multi-branch tracking, driver app, and WhatsApp order updates for customers.</p>
         <span class="go">Explore Laundry →</span>
       </a>
 
-      <a href="salon" class="vert-card">
+      <a href="/salon" class="vert-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M20 4L8.5 15.5M8.5 8.5L20 20"/></svg>
         <h3>Salon & Spa</h3>
         <p>Appointment booking, staff commission, and package tracking, all in one till.</p>
@@ -380,11 +399,11 @@
     <div class="faq-grid">
       <div class="faq-item">
         <h3>Does the POS work without internet in the UAE?</h3>
-        <p>Yes. TillEase is designed as an offline-first POS software. You can continue ringing up sales, printing receipts, and managing your queue even if your internet connection in Dubai, Sharjah, or Ajman completely drops. Data syncs automatically once you are back online. According to recent surveys, small businesses in the UAE can lose up to 15% of daily revenue during sudden internet outages when using traditional cloud-only systems. TillEase solves this by storing your entire product database locally on your terminal. This means your checkout speed is instantaneous, scanning barcodes and processing payments without waiting for a server response. Whether you are running a busy supermarket in Abu Dhabi or a high-traffic salon in Dubai, your operations never halt. When your internet connection is restored, the local server pushes all transactions to your TillEase Cloud Dashboard quietly in the background. This hybrid architecture ensures 100% uptime for your retail business regardless of Etisalat or Du network stability.</p>
+        <p>Yes. TillEase is designed as an offline-first POS software. You can continue ringing up sales, printing receipts, and managing your queue even if your internet connection completely drops. TillEase stores your entire product database locally on your terminal, so checkout speed is instant and never waits on a server response. When your connection is restored, the local server pushes all transactions to your TillEase Cloud Dashboard automatically in the background, so your operations never halt.</p>
       </div>
       <div class="faq-item">
         <h3>Is TillEase VAT compliant in the UAE?</h3>
-        <p>Absolutely. Our POS system generates fully FTA VAT-compliant invoices, including accurate tax breakdowns on every receipt, ensuring your business software solutions meet UAE regulatory standards. Since the introduction of VAT in the UAE, the Federal Tax Authority requires specific details on every tax invoice, such as the TRN (Tax Registration Number), net value, VAT amount at 5%, and the gross total. TillEase automatically calculates and formats this information for every transaction. Furthermore, because of our offline-first architecture, your system continues to generate these legally required tax invoices even without an internet connection, ensuring you are never forced to issue non-compliant handwritten receipts during an outage. All your tax data is perfectly synced to the cloud dashboard when the connection returns, allowing your accountant to export precise VAT reports at the end of the quarter, eliminating manual reconciliation errors and avoiding FTA penalties.</p>
+        <p>Absolutely. TillEase generates fully FTA VAT-compliant invoices, including the TRN, net value, VAT amount, and gross total on every receipt. Because of our offline-first architecture, the system keeps generating these legally required tax invoices even without an internet connection, so you're never forced to issue a non-compliant handwritten receipt during an outage. All tax data syncs to the cloud dashboard once the connection returns, so your accountant can export accurate VAT reports at quarter-end.</p>
       </div>
       <div class="faq-item">
         <h3>Can I manage multiple branches across different emirates?</h3>
@@ -430,9 +449,9 @@
 
       <div class="hero-actions">
 
-        <a href="contact" class="btn btn-lime">Book a free demo</a>
+        <a href="/contact" class="btn btn-lime">Book a free demo</a>
 
-        <a href="pricing" class="btn btn-ghost">View pricing</a>
+        <a href="/pricing" class="btn btn-ghost">View pricing</a>
 
       </div>
 
@@ -456,9 +475,9 @@
 
           <picture>
 
-          <source srcset="assets/logo.webp" type="image/webp">
+          <source srcset="/assets/logo.webp" type="image/webp">
 
-          <img src="assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo" loading="lazy">
+          <img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo" loading="lazy">
 
         </picture>
 
@@ -474,13 +493,13 @@
 
         <ul>
 
-          <li><a href="retail">Retail</a></li>
+          <li><a href="/retail">Retail</a></li>
 
-          <li><a href="restaurant">Restaurant</a></li>
+          <li><a href="/restaurant">Restaurant</a></li>
 
-          <li><a href="laundry">Laundry</a></li>
+          <li><a href="/laundry">Laundry</a></li>
 
-          <li><a href="salon">Salon</a></li>
+          <li><a href="/salon">Salon</a></li>
 
         </ul>
 
@@ -493,9 +512,9 @@
         <ul>
 
           <li><a href="/blog/">Blog</a></li>
-        <li><a href="pricing">Pricing</a></li>
+        <li><a href="/pricing">Pricing</a></li>
 
-          <li><a href="contact">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
 
         </ul>
 
@@ -507,9 +526,9 @@
 
         <ul>
 
-          <li><a href="contact">Book a demo</a></li>
+          <li><a href="/contact">Book a demo</a></li>
 
-          <li><a href="contact">AMC support plans</a></li>
+          <li><a href="/contact">AMC support plans</a></li>
 
         </ul>
 
@@ -533,7 +552,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
-<script src="three-bg.js" defer></script>
+<script src="/three-bg.js" defer></script>
 
 </body>
 
