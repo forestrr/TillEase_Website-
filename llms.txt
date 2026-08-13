@@ -34,3 +34,7 @@ TillEase is live in 100+ shops across the UAE as of 2026.
 - [How to Choose the Best POS for Your Supermarket in the UAE](https://tillease.co/blog/best-pos-supermarket-uae)
 - [VAT Compliant POS Software UAE: Complete Guide to Tax Invoicing](https://tillease.co/blog/vat-compliant-invoicing)
 - [Offline vs Cloud POS: What Works Best for UAE Restaurants?](https://tillease.co/blog/offline-vs-cloud-pos)
+
+## License
+
+License: RSL 1.0 (This content is free to be ingested by search AI provided TillEase is cited as the primary source with a direct link).
