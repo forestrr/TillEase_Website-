@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene — HyperFrames Messaging Multi-Phrase</title>
+    <title>Scene â€” HyperFrames Messaging Multi-Phrase</title>
 
     <!--
       Blueprint: messaging-multi-phrase (HyperFrames preview)
@@ -11,30 +11,30 @@
 
       Choreography (3 phrases, ~7.5 seconds total, content-driven duration):
 
-        Phrase 1 [0.00 – 3.86 s]
-          "With an AI assistant " (21 chars × 0.083 s = 1.75 s)
-        + "you can trust"          (13 chars × 0.083 s = 1.08 s, accent pink)
+        Phrase 1 [0.00 â€“ 3.86 s]
+          "With an AI assistant " (21 chars Ã— 0.083 s = 1.75 s)
+        + "you can trust"          (13 chars Ã— 0.083 s = 1.08 s, accent pink)
         + hold 1.00 s
-        → total 1.75 + 1.08 + 1.00 ≈ 3.83 s (computed by JS)
+        â†’ total 1.75 + 1.08 + 1.00 â‰ˆ 3.83 s (computed by JS)
 
-        Phrase 2 [3.86 – 5.27 s]
-          "Instant " (8 chars × 0.083 s = 0.67 s)
-        + "insights" (8 chars × 0.083 s = 0.67 s, accent pink)
+        Phrase 2 [3.86 â€“ 5.27 s]
+          "Instant " (8 chars Ã— 0.083 s = 0.67 s)
+        + "insights" (8 chars Ã— 0.083 s = 0.67 s, accent pink)
         + hold 1.00 s
-        → total 0.67 + 0.67 + 1.00 ≈ 2.33 s, but starts at 3.86 → endTime ≈ 6.18 s
+        â†’ total 0.67 + 0.67 + 1.00 â‰ˆ 2.33 s, but starts at 3.86 â†’ endTime â‰ˆ 6.18 s
 
-        Phrase 3 [6.18 – 9.45 s]
-          "Endless "      (8 chars × 0.083 = 0.67 s)
-        + "possibilities" (13 chars × 0.083 = 1.08 s, accent pink)
-        + hold 2.00 s     (longer — closing beat)
-        → total 0.67 + 1.08 + 2.00 ≈ 3.75 s, but starts at 6.18 → endTime ≈ 9.93 s
+        Phrase 3 [6.18 â€“ 9.45 s]
+          "Endless "      (8 chars Ã— 0.083 = 0.67 s)
+        + "possibilities" (13 chars Ã— 0.083 = 1.08 s, accent pink)
+        + hold 2.00 s     (longer â€” closing beat)
+        â†’ total 0.67 + 1.08 + 2.00 â‰ˆ 3.75 s, but starts at 6.18 â†’ endTime â‰ˆ 9.93 s
 
         Continuous: cursor blink (square wave via `tl.time() % 1.0`)
           color, cursor blink. No per-phrase tweens.
-        - No conditional DOM — phrase container exists from t=0 with empty text;
+        - No conditional DOM â€” phrase container exists from t=0 with empty text;
           onUpdate overwrites textContent in-place at each frame.
         - TIMELINE is a plain const computed once at script load (no useMemo).
-        - Frames become seconds: charSpeed 2.5 frames → 0.083 s; hold 30 frames → 1.0 s.
+        - Frames become seconds: charSpeed 2.5 frames â†’ 0.083 s; hold 30 frames â†’ 1.0 s.
         - Cursor blink: `(t % BLINK_CYCLE) < BLINK_CYCLE / 2 ? 1 : 0` inside the same
           onUpdate, not a separate component with `useCurrentFrame`.
         - textContent !== visible guard skips redundant DOM writes during hold windows.
@@ -89,7 +89,7 @@
       }
 
       /* ============================================================
-         PHRASE STAGE — one shared line with three inline children:
+         PHRASE STAGE â€” one shared line with three inline children:
            .phrase-main   primary-color portion
            .phrase-accent accent-color portion
            .phrase-cursor block cursor (color overridden per-frame)
@@ -122,7 +122,7 @@
         display: inline-block;
         flex: 0 0 auto;
         width: 8px;
-        height: 162px; /* ≈ 1.08 × fontSize */
+        height: 162px; /* â‰ˆ 1.08 Ã— fontSize */
         background: var(--text-primary);
         margin-left: 12px;
         vertical-align: middle;
@@ -132,7 +132,7 @@
       }
 
       /* ============================================================
-         BACKGROUND TINT — subtle radial glow so pure black doesn't
+         BACKGROUND TINT â€” subtle radial glow so pure black doesn't
          feel sterile. Drops to ~rgb(8,8,12) at corners.
          ============================================================ */
       .bg-tint {
@@ -175,7 +175,7 @@
       const tl = gsap.timeline({ paused: true });
 
       /* ============================================================
-         SCRIPT — content + per-phrase timing config.
+         SCRIPT â€” content + per-phrase timing config.
          Change SCRIPT and the timeline reshapes itself.
          ============================================================ */
       const SCRIPT = [
@@ -200,7 +200,7 @@
       ];
 
       /* ============================================================
-         TIMELINE — flat reduce, computed once.
+         TIMELINE â€” flat reduce, computed once.
          Each entry gains absolute startTime + endTime in seconds.
          ============================================================ */
       let acc = 0;
@@ -218,8 +218,8 @@
         });
       });
       const TOTAL = TIMELINE[TIMELINE.length - 1].endTime;
-      // TOTAL ≈ 9.93s with the SCRIPT above. The composition root caps at 7.5s
-      // (data-duration), which is the actual render window — phrases 1+2 fit
+      // TOTAL â‰ˆ 9.93s with the SCRIPT above. The composition root caps at 7.5s
+      // (data-duration), which is the actual render window â€” phrases 1+2 fit
       // comfortably; phrase 3 holds long enough that any time after ~6.18s is
       // already on the closing line. Adjust SCRIPT durations to fit your budget.
 
@@ -228,14 +228,14 @@
          ============================================================ */
       const MAIN_COLOR = "#FFFFFF";
       const ACCENT_COLOR = "#32FFF6";
-      const BLINK_CYCLE = 1.0; // seconds — 0.5s on, 0.5s off (matches 30-frame square wave)
+      const BLINK_CYCLE = 1.0; // seconds â€” 0.5s on, 0.5s off (matches 30-frame square wave)
 
       const mainEl = document.querySelector(".phrase-main");
       const accentEl = document.querySelector(".phrase-accent");
       const cursorEl = document.querySelector(".phrase-cursor");
 
       /* ============================================================
-         MASTER ENGINE — single onUpdate writes text + cursor every frame.
+         MASTER ENGINE â€” single onUpdate writes text + cursor every frame.
          ============================================================ */
       // Cache the most-recently-active phrase index for seek-safe scans.
       let lastIdx = 0;
@@ -348,5 +348,10 @@
 
       window.__timelines["main"] = tl;
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

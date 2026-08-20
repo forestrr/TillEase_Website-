@@ -1,19 +1,19 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 3 — Assembly Focus Reveal (hyperframes)</title>
+    <title>Scene 3 â€” Assembly Focus Reveal (hyperframes)</title>
 
     <!--
       HyperFrames composition.tsx.
 
       Choreography (5 phases, 5 seconds total):
-        0.00 – 0.67s   "Just use" assembles in a discrete sequence (with hold)
-        0.73 – 1.23s   Pink logo pops in with back.out elastic
-        1.50 – 2.20s   "Just use" slides left + fades; container recenters around brand
-        2.67 – 3.57s   Camera zooms 5.5× into the logo (scale + counter-translate)
-        3.67 – 5.00s   Logo breathes (sine onUpdate, multiplicative on pop scale)
+        0.00 â€“ 0.67s   "Just use" assembles in a discrete sequence (with hold)
+        0.73 â€“ 1.23s   Pink logo pops in with back.out elastic
+        1.50 â€“ 2.20s   "Just use" slides left + fades; container recenters around brand
+        2.67 â€“ 3.57s   Camera zooms 5.5Ã— into the logo (scale + counter-translate)
+        3.67 â€“ 5.00s   Logo breathes (sine onUpdate, multiplicative on pop scale)
 
       Key differences :
         - Single paused GSAP timeline registered to window.__timelines["main"]
@@ -21,7 +21,7 @@
         - HERO_FINAL_OFFSET_X derived from real measurement, not estimate
         - Breathing uses the onUpdate (multiplicative) form so it multiplies
           onto the pop scale, not a fromTo + yoyo which would overwrite the pop value
-        - Three nested transform layers: zoom-scale → zoom-translate → recenter-shift
+        - Three nested transform layers: zoom-scale â†’ zoom-translate â†’ recenter-shift
         - Logo is loaded from a static PNG asset
     -->
 
@@ -58,7 +58,7 @@
         overflow: hidden;
       }
 
-      /* Three nested transform layers (outer → inner) */
+      /* Three nested transform layers (outer â†’ inner) */
       .zoom-scale {
         transform-origin: center center;
         will-change: transform;
@@ -77,7 +77,7 @@
         align-items: center;
       }
 
-      /* Companion text — fixed width to prevent assembly jitter */
+      /* Companion text â€” fixed width to prevent assembly jitter */
       .companion {
         width: 600px;
         display: flex;
@@ -153,7 +153,7 @@
               <div class="brand-group" data-layout-allow-overflow>
                 <span class="brand-text">Hyperframes</span>
                 <div class="hero">
-                  <!-- Inline-SVG placeholder mark — swap for your logo image -->
+                  <!-- Inline-SVG placeholder mark â€” swap for your logo image -->
                   <svg
                     class="logo-mark"
                     viewBox="0 0 100 100"
@@ -189,7 +189,7 @@
 
     <script>
       /* ================================================================
-         CONSTANTS — composition dimensions baked in.
+         CONSTANTS â€” composition dimensions baked in.
          ================================================================ */
       const W = 1920,
         H = 1080;
@@ -239,7 +239,7 @@
       ];
 
       /* ================================================================
-         TIMELINE — built synchronously so HyperFrames can seek it.
+         TIMELINE â€” built synchronously so HyperFrames can seek it.
          ================================================================ */
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
@@ -312,7 +312,7 @@
         );
 
         /* ============================================================
-           PHASE 4: Zoom — scale (outer) + counter-translate (middle) + brand text exits.
+           PHASE 4: Zoom â€” scale (outer) + counter-translate (middle) + brand text exits.
            ============================================================ */
         tl.to(
           ".zoom-scale",
@@ -348,7 +348,7 @@
         );
 
         /* ============================================================
-           PHASE 5: Breathing — onUpdate so it MULTIPLIES on the hero's
+           PHASE 5: Breathing â€” onUpdate so it MULTIPLIES on the hero's
            final pop scale, doesn't overwrite it.
            ============================================================ */
         const heroEl = document.querySelector(".hero");
@@ -378,5 +378,10 @@
         );
       }
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

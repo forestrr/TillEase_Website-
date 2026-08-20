@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -247,7 +247,7 @@
 
   <!-- Google tag (gtag.js) -->
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVS31CFK08"></script>
 
   <script>
 
@@ -257,7 +257,7 @@
 
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-TVS31CFK08');
 
   </script>
 
@@ -346,73 +346,83 @@
 
         <h2 style="font-size: 32px; margin-bottom: 32px;">Send us your details</h2>
 
-        <form onsubmit="event.preventDefault(); this.querySelector('.form-success').style.display='block';">
-
+        <form id="demoForm">
           <div class="form-field">
-
             <label for="name">Full name</label>
-
             <input type="text" id="name" name="name" required placeholder="Your name">
-
+            <span class="form-error-msg">Name is required</span>
           </div>
-
           <div class="form-field">
-
             <label for="business">Business name</label>
-
             <input type="text" id="business" name="business" placeholder="e.g. Al Sahil Supermarket">
-
           </div>
-
           <div class="form-field">
-
             <label for="industry">Industry</label>
-
             <select id="industry" name="industry">
-
               <option>Retail / Supermarket</option>
-
               <option>Restaurant / Cafe</option>
-
               <option>Laundry / Dry Clean</option>
-
               <option>Salon / Spa</option>
-
               <option>Other</option>
-
             </select>
-
           </div>
-
           <div class="form-field">
-
             <label for="phone">Phone / WhatsApp</label>
-
             <input type="tel" id="phone" name="phone" placeholder="+971 ...">
-
           </div>
-
           <div class="form-field">
-
             <label for="email">Email</label>
-
-            <input type="email" id="email" name="email" placeholder="you@business.com">
-
+            <input type="email" id="email" name="email" required placeholder="you@business.com">
+            <span class="form-error-msg">Valid email is required</span>
           </div>
-
           <div class="form-field">
-
             <label for="message">Tell us about your setup</label>
-
             <textarea id="message" name="message" rows="4" placeholder="Number of branches, current system, anything else useful..."></textarea>
-
           </div>
-
           <button type="submit" class="btn btn-lime" style="width:100%; justify-content:center; padding:16px;">Book a free demo</button>
-
-          <p class="form-success" style="display:none; color:var(--lime); font-size:14px; margin-top:14px; padding:16px; border:2px solid var(--lime); font-weight:600; background:var(--ink);">Thanks — this form is a template. Connect it to your email or CRM to start receiving submissions.</p>
-
+          <p class="form-success" style="display:none; color:var(--lime); font-size:14px; margin-top:14px; padding:16px; border:2px solid var(--lime); font-weight:600; background:var(--ink);">Thanks â€” this form is a template. Connect it to your email or CRM to start receiving submissions.</p>
         </form>
+
+        <script>
+          document.getElementById('demoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const successMsg = this.querySelector('.form-success');
+            
+            // Reset states
+            nameInput.parentElement.classList.remove('error');
+            emailInput.parentElement.classList.remove('error');
+            successMsg.style.display = 'none';
+            
+            if (!nameInput.value.trim()) {
+              nameInput.parentElement.classList.add('error');
+              isValid = false;
+            }
+            
+            if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+              emailInput.parentElement.classList.add('error');
+              isValid = false;
+            }
+            
+            if (isValid) {
+              // Show loading
+              submitBtn.classList.add('loading');
+              submitBtn.disabled = true;
+              
+              // Simulate API call delay
+              setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                successMsg.style.display = 'block';
+                this.reset();
+              }, 1500);
+            }
+          });
+        </script>
 
       </div>
 
@@ -641,7 +651,7 @@
 
     <div class="foot-bottom">
 
-      <span>© 2026 TillEase Business Software Solutions</span>
+      <span>Ã‚Â© 2026 TillEase Business Software Solutions</span>
 
       <span>Ajman, United Arab Emirates</span>
 
@@ -657,9 +667,15 @@
 
 <script src="/three-bg.js" defer></script>
 
+<div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
 </body>
 
 </html>
+
+
 
 
 

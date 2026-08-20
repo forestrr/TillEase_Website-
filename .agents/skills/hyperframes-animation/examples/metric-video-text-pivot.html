@@ -1,25 +1,25 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 07 — HyperFrames Video Kinetic Text Pivot</title>
+    <title>Scene 07 â€” HyperFrames Video Kinetic Text Pivot</title>
 
     <!--
       HyperFrames composition.tsx.
 
       Choreography (4 phases, 6.5 seconds total):
-        0.17 – 0.87s   "HyperFrames" badge fades in (top)
-        0.17 – 0.87s   Demo screen card enters centered (scale 0.6 → 1)
-        2.20 – 3.00s   Video slides left to 32% W (scale → 0.85); MP4 pops in on right
+        0.17 â€“ 0.87s   "HyperFrames" badge fades in (top)
+        0.17 â€“ 0.87s   Demo screen card enters centered (scale 0.6 â†’ 1)
+        2.20 â€“ 3.00s   Video slides left to 32% W (scale â†’ 0.85); MP4 pops in on right
                        with 5-layer green depth stack and bouncy back.out(1.6)
-        3.00 – 3.86s   MP4 breathes (±2% scale at ~1.9 Hz)
-        3.86 – 4.46s   Video and MP4 slide off left + fade; typing stage fades in center
-        4.36 – 5.13s   "HTML pages become video" types char-by-char (23 chars at 30 ch/s)
+        3.00 â€“ 3.86s   MP4 breathes (Â±2% scale at ~1.9 Hz)
+        3.86 â€“ 4.46s   Video and MP4 slide off left + fade; typing stage fades in center
+        4.36 â€“ 5.13s   "HTML pages become video" types char-by-char (23 chars at 30 ch/s)
                        Accent words "pages" and "video" in brand green
-        4.83 – 5.43s   Gradient pill (purple → green) scales in behind line 2 with glow halo
-        5.13 – 5.63s   "frame by frame." types char-by-char inside the pill
-        0 – 6.50s      Continuous: video float, cursor blink, stat breath
+        4.83 â€“ 5.43s   Gradient pill (purple â†’ green) scales in behind line 2 with glow halo
+        5.13 â€“ 5.63s   "frame by frame." types char-by-char inside the pill
+        0 â€“ 6.50s      Continuous: video float, cursor blink, stat breath
                        (each gated by time window)
           so entry, continuous motion, and static tilt never overwrite each other
         - Conditional rendering ({frame > X && ...}) replaced by permanent DOM +
@@ -127,7 +127,7 @@
       }
 
       /* ============================================================
-         VIDEO CARD — three nested wrappers
+         VIDEO CARD â€” three nested wrappers
          ============================================================ */
       .video-pos {
         position: absolute;
@@ -208,7 +208,7 @@
       }
 
       /* ============================================================
-         MP4 STAT — three nested wrappers + depth stack
+         MP4 STAT â€” three nested wrappers + depth stack
          ============================================================ */
       .stat-pos {
         position: absolute;
@@ -243,7 +243,7 @@
       }
 
       /* ============================================================
-         TYPING STAGE — center, fades in during pivot
+         TYPING STAGE â€” center, fades in during pivot
          ============================================================ */
       .typing-stage {
         position: absolute;
@@ -456,7 +456,7 @@
         statBreathAt: 3.0, // entry settles by here, breath begins
         statBreathDur: 0.86, // until exit at 3.86
 
-        // Phase 3: pivot — both exit, typing begins
+        // Phase 3: pivot â€” both exit, typing begins
         pivotAt: 3.86,
         exitDur: 0.6,
         videoExitX: -W * 0.5,
@@ -493,10 +493,10 @@
           SEG.accent2.length +
           SEG.line2.length, // 38
       };
-      const TYPING_DUR = (BOUNDS.line2End - 0) / TIMING.typeRate; // ≈ 1.3 s
+      const TYPING_DUR = (BOUNDS.line2End - 0) / TIMING.typeRate; // â‰ˆ 1.3 s
 
       /* ================================================================
-         BUILD DOM — 5-layer depth stack for "MP4"
+         BUILD DOM â€” 5-layer depth stack for "MP4"
          ================================================================ */
       const LAYER_COUNT = 5;
       const OFFSET_X = 1;
@@ -589,7 +589,7 @@
       );
 
       /* ----------------------------------------------------------------
-         PHASE 3: Pivot — video + stat exit; typing fades in
+         PHASE 3: Pivot â€” video + stat exit; typing fades in
          ---------------------------------------------------------------- */
       tl.to(
         "#video-pos",
@@ -715,7 +715,7 @@
       );
 
       /* ----------------------------------------------------------------
-         CONTINUOUS SCENE-TICKER — float, breath, cursor blink
+         CONTINUOUS SCENE-TICKER â€” float, breath, cursor blink
          All gated by time windows so they only fire when visible.
          ---------------------------------------------------------------- */
       const videoFloat = document.getElementById("video-float");
@@ -734,19 +734,19 @@
             const idx = typedIndexAt(t);
             renderTypedText(idx);
 
-            // Video float — only while video is visible (Phase 1 + 2)
+            // Video float â€” only while video is visible (Phase 1 + 2)
             if (t < TIMING.pivotAt) {
               const floatY = Math.sin(t * 0.9) * 6;
               gsap.set(videoFloat, { y: floatY });
             }
 
-            // Stat breath — only while MP4 is settled and not yet exiting
+            // Stat breath â€” only while MP4 is settled and not yet exiting
             if (t > TIMING.statBreathAt && t < TIMING.pivotAt) {
               const breath = 1 + Math.sin((t - TIMING.statBreathAt) * 1.2) * 0.02;
               gsap.set(statBreathEl, { scale: breath });
             }
 
-            // Cursor blink — 1 Hz (Math.floor(t * 2) % 2 === 0 → on for 0.5s, off for 0.5s)
+            // Cursor blink â€” 1 Hz (Math.floor(t * 2) % 2 === 0 â†’ on for 0.5s, off for 0.5s)
             const blink = Math.floor(t * 2) % 2 === 0 ? 1 : 0;
 
             // Cursor 1: visible while typing line 1 (idx < accent2End)
@@ -764,7 +764,7 @@
               cursor1El.style.opacity = 0;
             }
 
-            // Cursor 2: visible while typing line 2 (idx ≥ accent2End && idx < line2End)
+            // Cursor 2: visible while typing line 2 (idx â‰¥ accent2End && idx < line2End)
             if (idx >= BOUNDS.accent2End && idx < BOUNDS.line2End) {
               cursor2El.style.opacity = blink;
             } else {
@@ -775,5 +775,10 @@
         0,
       );
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

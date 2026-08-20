@@ -1,20 +1,20 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 5 — HyperFrames Displace Reveal</title>
+    <title>Scene 5 â€” HyperFrames Displace Reveal</title>
 
     <!--
       HyperFrames composition.tsx.
 
       Choreography (4 phases, 7.5 seconds total):
-        0.00 – 0.67s   Typewriter reveals "HyperFrames turns" (3 → 17 chars)
-        1.67 – 2.22s   Ticker scrolls: HTML → motion
-        3.33 – 3.88s   Ticker scrolls: motion → video
-        4.60 – 5.45s   Logo enters from offscreen-right with rotation + scale impact
+        0.00 â€“ 0.67s   Typewriter reveals "HyperFrames turns" (3 â†’ 17 chars)
+        1.67 â€“ 2.22s   Ticker scrolls: HTML â†’ motion
+        3.33 â€“ 3.88s   Ticker scrolls: motion â†’ video
+        4.60 â€“ 5.45s   Logo enters from offscreen-right with rotation + scale impact
                        Text group pushed left + fades (40-50% of hero duration)
-        6.60 – 7.50s   Logo breathes (dual-frequency sine onUpdate, multiplicative on 1.3 scale)
+        6.60 â€“ 7.50s   Logo breathes (dual-frequency sine onUpdate, multiplicative on 1.3 scale)
           tuned to 40-50% of hero duration so the impact reads as causal
         - Breathing uses Form 2 (onUpdate) so it multiplies onto the 1.3 final scale,
           not overwrites it (Form 1 yoyo would undo the impact)
@@ -67,7 +67,7 @@
         overflow: hidden;
       }
 
-      /* Text group — typewriter + ticker side by side, displaced as a unit */
+      /* Text group â€” typewriter + ticker side by side, displaced as a unit */
       .text-group {
         position: absolute;
         display: flex;
@@ -77,7 +77,7 @@
       }
 
       .typewriter {
-        height: 168px; /* = ITEM_HEIGHT (FONT_SIZE × 1.2) */
+        height: 168px; /* = ITEM_HEIGHT (FONT_SIZE Ã— 1.2) */
         display: flex;
         align-items: center;
         color: var(--text);
@@ -117,7 +117,7 @@
         white-space: pre;
       }
 
-      /* Hero logo — enters from offscreen right */
+      /* Hero logo â€” enters from offscreen right */
       .hero {
         position: absolute;
         width: 440px;
@@ -171,7 +171,7 @@
 
         <!-- Hero logo asset -->
         <div class="hero" id="hero-logo">
-          <!-- Inline-SVG placeholder mark — swap for your logo image -->
+          <!-- Inline-SVG placeholder mark â€” swap for your logo image -->
           <svg class="logo-mark" viewBox="0 0 100 100" role="img" aria-label="HyperFrames">
             <defs>
               <linearGradient id="hfMark" x1="0" y1="0" x2="1" y2="1">
@@ -211,8 +211,8 @@
         typeStartLen: 3, // pre-render the first 3 chars
 
         // Phase 2: ticker steps
-        ticker1At: 1.67, // HTML → motion
-        ticker2At: 3.33, // motion → video
+        ticker1At: 1.67, // HTML â†’ motion
+        ticker2At: 3.33, // motion â†’ video
         stepDur: 0.55,
 
         // Phase 3: reactive displacement
@@ -256,7 +256,7 @@
       );
 
       /* ----------------------------------------------------------------
-         PHASE 2: Vertical ticker (2 steps: HTML → motion → video)
+         PHASE 2: Vertical ticker (2 steps: HTML â†’ motion â†’ video)
          ---------------------------------------------------------------- */
       tl.to(
         ".ticker-stack",
@@ -279,7 +279,7 @@
       );
 
       /* ----------------------------------------------------------------
-         PHASE 3: Reactive displacement — three concurrent tweens.
+         PHASE 3: Reactive displacement â€” three concurrent tweens.
          ---------------------------------------------------------------- */
       // (1) Hero enters with rotation + scale impact, lands at scale 1.3.
       tl.fromTo(
@@ -296,14 +296,14 @@
         TIMING.displaceAt,
       );
 
-      // (2) Text pushed left. Completes at 50% of hero duration → immediate impact.
+      // (2) Text pushed left. Completes at 50% of hero duration â†’ immediate impact.
       tl.to(
         ".text-group",
         { x: TIMING.pushDist, duration: TIMING.heroDur * 0.5, ease: "power2.out" },
         TIMING.displaceAt,
       );
 
-      // (3) Text fades. Completes at 40% → fades slightly before push lands.
+      // (3) Text fades. Completes at 40% â†’ fades slightly before push lands.
       tl.to(
         ".text-group",
         { opacity: 0, duration: TIMING.heroDur * 0.4, ease: "power2.out" },
@@ -311,14 +311,14 @@
       );
 
       /* ----------------------------------------------------------------
-         PHASE 4: Breathing — onUpdate so it MULTIPLIES onto the 1.3 scale.
+         PHASE 4: Breathing â€” onUpdate so it MULTIPLIES onto the 1.3 scale.
          Dual frequencies (1.0s scale, 1.33s rotation) for organic motion.
          ---------------------------------------------------------------- */
       const heroEl = document.querySelector(".hero");
       const HERO_FINAL_SCALE = 1.3;
       const HERO_FINAL_ROTATION = 0;
       const SCALE_PERIOD = 1.0; // seconds per scale cycle
-      const ROTATE_PERIOD = 1.333; // seconds per rotation cycle — not a simple ratio of SCALE_PERIOD
+      const ROTATE_PERIOD = 1.333; // seconds per rotation cycle â€” not a simple ratio of SCALE_PERIOD
       const SCALE_AMP = 0.05;
       const ROTATE_AMP = 3;
 
@@ -343,5 +343,10 @@
         TIMING.idleStart,
       );
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

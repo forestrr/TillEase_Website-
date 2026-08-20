@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 03 — HyperFrames Anchor Chain Reveal</title>
+    <title>Scene 03 â€” HyperFrames Anchor Chain Reveal</title>
 
     <!--
       HyperFrames-native version of the scene-03-anchor-chain-reveal concept.
@@ -14,15 +14,15 @@
          previewing, and rendering programmable motion."
 
       Sub-shots (local time, 8s total):
-        0.0 – 1.2s   "HyperFrames"           Brand reveal (hacker-flip)
-        1.2 – 4.0s   "HTML VIDEO"            Text swap + rolling ticker
-        4.0 – 6.3s   "60FPS"                 Counter + capability cloud
-        6.3 – 8.0s   "Built for Motion"      Capability strip
+        0.0 â€“ 1.2s   "HyperFrames"           Brand reveal (hacker-flip)
+        1.2 â€“ 4.0s   "HTML VIDEO"            Text swap + rolling ticker
+        4.0 â€“ 6.3s   "60FPS"                 Counter + capability cloud
+        6.3 â€“ 8.0s   "Built for Motion"      Capability strip
 
-      Placeholders (self-contained — no asset files needed):
-        inline-SVG "HF" mark         — brand logo (swap for your image)
-        CSS initials circles         — user avatars (edit CREATOR_INITIALS)
-        CSS text chips               — partner brand logos (edit --brand-name)
+      Placeholders (self-contained â€” no asset files needed):
+        inline-SVG "HF" mark         â€” brand logo (swap for your image)
+        CSS initials circles         â€” user avatars (edit CREATOR_INITIALS)
+        CSS text chips               â€” partner brand logos (edit --brand-name)
       Replace with real assets for production.
     -->
 
@@ -30,7 +30,7 @@
 
     <style>
       :root {
-        /* Palette — direct port of the the source COLORS constants */
+        /* Palette â€” direct port of the the source COLORS constants */
         --text-primary: #ffffff;
         --text-muted: rgba(255, 255, 255, 0.45);
         --brand-green: #00e676;
@@ -70,7 +70,7 @@
           linear-gradient(135deg, var(--bg-grad-from), var(--bg-grad-to));
       }
 
-      /* Camera wrapper — port of <CameraSystem /> */
+      /* Camera wrapper â€” port of <CameraSystem /> */
       .camera {
         position: absolute;
         inset: 0;
@@ -78,7 +78,7 @@
       }
 
       /* ============================================================
-         PHASES 1–3 (BrandReveal): logo + decode + swap + recenter
+         PHASES 1â€“3 (BrandReveal): logo + decode + swap + recenter
          ============================================================ */
       .brand-stage {
         position: absolute;
@@ -102,9 +102,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 100; /* highest — sits above lines + avatars */
+        z-index: 100; /* highest â€” sits above lines + avatars */
         opacity: 1;
-        /* initial scale(0) set by GSAP fromTo — no CSS transform here */
+        /* initial scale(0) set by GSAP fromTo â€” no CSS transform here */
       }
       .anchor-logo img {
         width: 100%;
@@ -125,7 +125,7 @@
       .flip-glyph {
         position: relative;
         display: inline-block;
-        font-size: 163px; /* 1920 × 0.085 — matches the source brandFontSize */
+        font-size: 163px; /* 1920 Ã— 0.085 â€” matches the source brandFontSize */
         font-weight: 900;
         letter-spacing: -0.02em;
       }
@@ -172,9 +172,9 @@
         letter-spacing: -0.02em;
       }
 
-      /* Vertical ticker — port of <RollingWord /> */
+      /* Vertical ticker â€” port of <RollingWord /> */
       .ticker-window {
-        height: 204px; /* fontSize × 1.25 = 163 × 1.25 ≈ 204 */
+        height: 204px; /* fontSize Ã— 1.25 = 163 Ã— 1.25 â‰ˆ 204 */
         overflow: hidden;
         display: inline-flex;
         flex-direction: column;
@@ -216,7 +216,7 @@
       .count {
         font-variant-numeric: tabular-nums;
         font-weight: 900;
-        font-size: 115px; /* 1920 × 0.06 */
+        font-size: 115px; /* 1920 Ã— 0.06 */
         color: var(--brand-green);
         display: inline-block;
         min-width: 200px;
@@ -245,7 +245,7 @@
         overflow: hidden;
         border: 3px solid rgba(255, 255, 255, 0.2);
         opacity: 0;
-        /* initial scale(0) set by GSAP fromTo — no CSS transform here */
+        /* initial scale(0) set by GSAP fromTo â€” no CSS transform here */
         background: linear-gradient(135deg, #6b8cff, #a6b3ff);
         display: flex;
         align-items: center;
@@ -269,7 +269,7 @@
       .brand-label {
         text-align: center;
         margin-bottom: 25px;
-        font-size: 27px; /* 1920 × 0.014 */
+        font-size: 27px; /* 1920 Ã— 0.014 */
         font-weight: 500;
         color: var(--text-muted);
         letter-spacing: 0.2em;
@@ -293,7 +293,7 @@
         align-items: center;
         justify-content: center;
         opacity: 0;
-        /* initial scale(0.5) set by GSAP fromTo — no CSS transform here */
+        /* initial scale(0.5) set by GSAP fromTo â€” no CSS transform here */
       }
       .brand-logo::before {
         content: var(--brand-name);
@@ -340,7 +340,7 @@
 
       <div class="camera">
         <!-- =====================================================
-             PHASES 1–3: BrandReveal (logo + hacker-flip + swap)
+             PHASES 1â€“3: BrandReveal (logo + hacker-flip + swap)
              ===================================================== -->
         <div
           id="phase-anchor"
@@ -350,9 +350,9 @@
           data-track-index="1"
         >
           <div class="anchor-shift" data-layout-allow-overflow>
-            <!-- Anchor logo — persists across all phases -->
+            <!-- Anchor logo â€” persists across all phases -->
             <div class="anchor-logo">
-              <!-- Inline-SVG placeholder mark — swap for your logo image -->
+              <!-- Inline-SVG placeholder mark â€” swap for your logo image -->
               <svg
                 class="logo-mark"
                 viewBox="0 0 100 100"
@@ -469,38 +469,38 @@
 
     <script>
       /* ================================================================
-         CONSTANTS — all derived once, never recomputed at tween time.
-         Composition is 1920 × 1080, total duration 8.0s.
+         CONSTANTS â€” all derived once, never recomputed at tween time.
+         Composition is 1920 Ã— 1080, total duration 8.0s.
          ================================================================ */
       const W = 1920,
         H = 1080;
       const FPS_HASH = 60; // synthetic clock for the hacker-flip flicker hash only
 
-      // Self-contained placeholder data — swap for real asset paths in production.
+      // Self-contained placeholder data â€” swap for real asset paths in production.
       const CREATOR_INITIALS = ["JC", "MK", "AR", "TS", "LP", "DV", "NW", "SB", "KH", "EM"];
 
       const TIMING = {
-        // Phase 1 — logo pop + HyperFrames decode
+        // Phase 1 â€” logo pop + HyperFrames decode
         logoPop: 0.32,
         flipStart: 0.4, // logoPop + ~5/60
         flipStagger: 0.033, // 2 frames at 60fps per glyph
         flipDuration: 0.55,
 
-        // Phase 2 — slide-out + claim slide-in.
+        // Phase 2 â€” slide-out + claim slide-in.
         swapTrigger: 1.38,
         swapDuration: 0.55,
         claimFadeIn: 1.65, // swapTrigger + ~8/60
         claimFadeDur: 0.27,
 
-        // Rolling ticker — render → ship.
+        // Rolling ticker â€” render â†’ ship.
         tickerTrigger: 2.35,
         tickerDuration: 0.45,
 
-        // Phase 3 — logo recenters (anchored ~0.25s before "trusted")
+        // Phase 3 â€” logo recenters (anchored ~0.25s before "trusted")
         recenterTrigger: 3.87,
         recenterDuration: 0.9,
 
-        // Phase 4 — cloud + counter.
+        // Phase 4 â€” cloud + counter.
         cloudFadeIn: 4.12,
         cloudFadeDur: 0.4,
         avatarEntryStart: 4.3,
@@ -514,18 +514,18 @@
         counterDuration: 0.85,
         suffixDelay: 0.05,
 
-        // Phase 5 — brand logos
+        // Phase 5 â€” brand logos
         brandStripStart: 6.5,
         brandStripFadeDur: 0.35,
         brandLogoStagger: 0.1,
         brandScrollDur: 1.4, // until end (8.0 - 6.5 - 0.1 buffer)
       };
 
-      // Layout constants — shared center keeps logo, avatars, and lines aligned.
-      const RECENTER_OFFSET = -W * 0.12; // = -230.4 px — container shift in Phase 2
+      // Layout constants â€” shared center keeps logo, avatars, and lines aligned.
+      const RECENTER_OFFSET = -W * 0.12; // = -230.4 px â€” container shift in Phase 2
       const CENTER_OFFSET = 800; // Phase 3: logo center aligns with cloud center.
 
-      // Cloud geometry — logo final position and line origins derive from this center.
+      // Cloud geometry â€” logo final position and line origins derive from this center.
       const CLOUD_CENTER_X = W / 2;
       const CLOUD_CENTER_Y = H * 0.47; // = 507.6 px
       const VERTICAL_ADJUST = CLOUD_CENTER_Y - H / 2;
@@ -534,7 +534,7 @@
       const AVATAR_COUNT = 10;
 
       /* ================================================================
-         BUILD DOM — flip glyphs, avatars, connection lines.
+         BUILD DOM â€” flip glyphs, avatars, connection lines.
          Runs synchronously before the timeline registration.
          ================================================================ */
 
@@ -548,10 +548,10 @@
         span.dataset.index = String(index);
         const ghost = document.createElement("span");
         ghost.className = "ghost";
-        ghost.textContent = char === " " ? " " : char;
+        ghost.textContent = char === " " ? "Â " : char;
         const anim = document.createElement("span");
         anim.className = "anim";
-        anim.textContent = char === " " ? " " : char;
+        anim.textContent = char === " " ? "Â " : char;
         span.append(ghost, anim);
         phase1.appendChild(span);
       });
@@ -576,12 +576,12 @@
         av.style.width = size + "px";
         av.style.height = size + "px";
         av.dataset.index = String(i);
-        // Initials placeholder — deterministic hue from index (no asset files).
+        // Initials placeholder â€” deterministic hue from index (no asset files).
         av.textContent = avatars[i];
         av.style.background = `linear-gradient(135deg, hsl(${(220 + i * 36) % 360}, 70%, 62%), hsl(${(260 + i * 36) % 360}, 70%, 46%))`;
         cloudAvatars.appendChild(av);
 
-        // SVG line — both endpoints start at center; will tween x2/y2 outward.
+        // SVG line â€” both endpoints start at center; will tween x2/y2 outward.
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.setAttribute("x1", CLOUD_CENTER_X);
         line.setAttribute("y1", CLOUD_CENTER_Y);
@@ -606,8 +606,8 @@
       tl.fromTo(".camera", { scale: 0.95 }, { scale: 1.0, duration: 0.95, ease: "power2.out" }, 0);
 
       // Subtle drift across the whole 8s. Finite yoyo cycles, not infinite.
-      // sin(frame * 0.003) cycle = 2π / 0.003 frames = 2094 frames ≈ 34.9s at 60fps.
-      // Over 8s we see roughly a quarter cycle — model as a single slow yoyo.
+      // sin(frame * 0.003) cycle = 2Ï€ / 0.003 frames = 2094 frames â‰ˆ 34.9s at 60fps.
+      // Over 8s we see roughly a quarter cycle â€” model as a single slow yoyo.
       tl.fromTo(
         ".camera",
         { x: 0, y: 0 },
@@ -633,16 +633,16 @@
       // that derives the visible character from time.
       const CHAR_POOL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&";
       const FLICKER = 3; // frames between glyph reshuffles
-      const REVEAL_AT = 0.6; // progress threshold to swap random → real
+      const REVEAL_AT = 0.6; // progress threshold to swap random â†’ real
 
       function pseudoHash(i, t) {
-        // Cheap deterministic 32-bit mix — no Math.random, no Date.now
+        // Cheap deterministic 32-bit mix â€” no Math.random, no Date.now
         return ((i * 374761393 + t * 668265263) >>> 0) % CHAR_POOL.length;
       }
 
       document.querySelectorAll(".flip-glyph").forEach((glyph) => {
         const index = Number(glyph.dataset.index);
-        const real = glyph.dataset.char === " " ? " " : glyph.dataset.char;
+        const real = glyph.dataset.char === " " ? "Â " : glyph.dataset.char;
         const anim = glyph.querySelector(".anim");
         const start = TIMING.flipStart + index * TIMING.flipStagger;
 
@@ -671,7 +671,7 @@
       });
 
       // ----------------------------------------------------------------
-      // PHASE 2: Swap — old text slides out, container shifts left,
+      // PHASE 2: Swap â€” old text slides out, container shifts left,
       //                 claim fades in at the old text's origin.
       // ----------------------------------------------------------------
       tl.to(
@@ -706,7 +706,7 @@
         TIMING.claimFadeIn,
       );
 
-      // Rolling ticker — render → ship.
+      // Rolling ticker â€” render â†’ ship.
       tl.to(
         ".ticker-stack",
         {
@@ -736,7 +736,7 @@
           x: CENTER_OFFSET,
           y: VERTICAL_ADJUST,
           duration: TIMING.recenterDuration,
-          ease: "power2.out", // spring(stiffness:45, damping:22) — gentle
+          ease: "power2.out", // spring(stiffness:45, damping:22) â€” gentle
         },
         TIMING.recenterTrigger,
       );
@@ -790,7 +790,7 @@
       const countEl = document.querySelector(".count");
       const suffixEl = document.querySelector(".count-suffix");
 
-      // Counter pulse — text stays deterministic under timeline seeking.
+      // Counter pulse â€” text stays deterministic under timeline seeking.
       tl.fromTo(
         countEl,
         {
@@ -815,7 +815,7 @@
       );
 
       // ----------------------------------------------------------------
-      // PHASE 5: Brand strip — label + scrolling partner logos.
+      // PHASE 5: Brand strip â€” label + scrolling partner logos.
       // ----------------------------------------------------------------
       tl.fromTo(
         ".brand-strip",
@@ -842,9 +842,9 @@
         TIMING.brandStripStart,
       );
 
-      // Finite horizontal scroll. Distance derived from remaining time × speed.
-      // Speed in original: 0.8 px/frame at 30fps = 24 px/s. Over 1.4s ≈ 33.6 px.
-      // For a more visible scroll, multiply by 4 → ~135 px.
+      // Finite horizontal scroll. Distance derived from remaining time Ã— speed.
+      // Speed in original: 0.8 px/frame at 30fps = 24 px/s. Over 1.4s â‰ˆ 33.6 px.
+      // For a more visible scroll, multiply by 4 â†’ ~135 px.
       tl.to(
         ".brand-strip-track",
         {
@@ -857,5 +857,10 @@
 
       window.__timelines["main"] = tl;
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

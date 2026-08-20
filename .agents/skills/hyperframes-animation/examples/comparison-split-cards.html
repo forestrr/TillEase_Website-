@@ -1,26 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 09 — Split Comparison Reveal</title>
+    <title>Scene 09 â€” Split Comparison Reveal</title>
 
     <!--
       HyperFrames composition.tsx.
 
       Choreography (3 phases, 5 seconds total):
-        0.17 – 0.83s   Title slides down from top: "Build Video With HyperFrames"
-        0.50 – 1.83s   Left card "HTML Composition" enters from left (+16° rotateY)
-        0.83 – 1.83s   Right card "Render Pipeline" enters from right (-16° rotateY)
-        1.67 – 2.17s   Left pill badge "Seekable Timeline" pops in with back.out(1.7)
-        2.00 – 2.50s   Right pill badge "Render Ready" pops in
-        0 – 5.00s      Continuous floating: cards y ±6 px / rotation ±1° (phase-opposed)
-                       Badges y ±5 px (slow shared sine)
+        0.17 â€“ 0.83s   Title slides down from top: "Build Video With HyperFrames"
+        0.50 â€“ 1.83s   Left card "HTML Composition" enters from left (+16Â° rotateY)
+        0.83 â€“ 1.83s   Right card "Render Pipeline" enters from right (-16Â° rotateY)
+        1.67 â€“ 2.17s   Left pill badge "Seekable Timeline" pops in with back.out(1.7)
+        2.00 â€“ 2.50s   Right pill badge "Render Ready" pops in
+        0 â€“ 5.00s      Continuous floating: cards y Â±6 px / rotation Â±1Â° (phase-opposed)
+                       Badges y Â±5 px (slow shared sine)
           and .card-tilt (static rotateY + float rotation) so entry and float
           don't fight on the same alias
         - All continuous floating consolidated into one shared scene-ticker onUpdate
           (6 gsap.set calls per frame, batched by the browser)
-        - Phase offset Math.PI between the two cards' floats — opposed breathing
+        - Phase offset Math.PI between the two cards' floats â€” opposed breathing
         - Card images are HyperFrames workflow mockups (no asset files needed)
         - Ambient dual-glow via two radial-gradients in a single overlay
     -->
@@ -184,7 +184,7 @@
       /* ============================================================
          CARD IMAGE PLACEHOLDERS (mock UI)
          ============================================================ */
-      /* Left card — HTML Composition: gradient + timed clip grid */
+      /* Left card â€” HTML Composition: gradient + timed clip grid */
       .card-left .card-image {
         background: linear-gradient(
           135deg,
@@ -220,7 +220,7 @@
         color: rgba(255, 255, 255, 0.8);
       }
 
-      /* Right card — Render Pipeline: validation rows */
+      /* Right card â€” Render Pipeline: validation rows */
       .card-right .card-image {
         background: linear-gradient(
           135deg,
@@ -399,22 +399,22 @@
                       <div class="mock-row">
                         <div class="mock-avatar purple"></div>
                         <span class="name">Register timeline</span>
-                        <span class="status">● seekable</span>
+                        <span class="status">â— seekable</span>
                       </div>
                       <div class="mock-row">
                         <div class="mock-avatar green"></div>
                         <span class="name">Validate layout</span>
-                        <span class="status">● clean</span>
+                        <span class="status">â— clean</span>
                       </div>
                       <div class="mock-row">
                         <div class="mock-avatar orange"></div>
                         <span class="name">Render frames</span>
-                        <span class="status">● stable</span>
+                        <span class="status">â— stable</span>
                       </div>
                       <div class="mock-row">
                         <div class="mock-avatar"></div>
                         <span class="name">Publish MP4</span>
-                        <span class="status">● ready</span>
+                        <span class="status">â— ready</span>
                       </div>
                     </div>
                   </div>
@@ -513,7 +513,7 @@
       };
 
       /* ================================================================
-         BADGE POSITIONS — set via CSS left/top once (not tweened)
+         BADGE POSITIONS â€” set via CSS left/top once (not tweened)
          ================================================================ */
       const badgeLeftEl = document.getElementById("badge-left");
       const badgeRightEl = document.getElementById("badge-right");
@@ -610,7 +610,7 @@
       );
 
       /* ----------------------------------------------------------------
-         CONTINUOUS FLOATING — shared scene-ticker onUpdate
+         CONTINUOUS FLOATING â€” shared scene-ticker onUpdate
          Six gsap.set calls per frame, batched by the browser.
          ---------------------------------------------------------------- */
       const leftPos = document.querySelector("#card-left  .card-pos");
@@ -626,7 +626,7 @@
           ease: "none",
           onUpdate: function () {
             const t = tl.time();
-            // Cards float in opposition (phase π apart).
+            // Cards float in opposition (phase Ï€ apart).
             const lY = Math.sin(t * TIMING.floatYSpeed) * TIMING.floatYAmp;
             const lR = Math.sin(t * TIMING.floatRSpeed) * TIMING.floatRAmp;
             const rY = Math.sin(t * TIMING.floatYSpeed + Math.PI) * TIMING.floatYAmp;
@@ -636,7 +636,7 @@
             gsap.set(leftTilt, { rotationY: TIMING.baseTilt + lR });
             gsap.set(rightTilt, { rotationY: -TIMING.baseTilt + rR });
 
-            // Badges — small shared y oscillation.
+            // Badges â€” small shared y oscillation.
             const bY = Math.sin(t * TIMING.badgeYSpeed) * TIMING.badgeYAmp;
             gsap.set(badgeLeftEl, { y: bY });
             gsap.set(badgeRightEl, { y: bY });
@@ -645,5 +645,10 @@
         0,
       );
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+

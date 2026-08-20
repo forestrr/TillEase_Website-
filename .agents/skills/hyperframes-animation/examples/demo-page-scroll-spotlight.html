@@ -1,23 +1,23 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Scene 04 — Contextual Product Showcase</title>
+    <title>Scene 04 â€” Contextual Product Showcase</title>
 
     <!--
       HyperFrames composition.tsx.
 
       Choreography (4 phases, 9 seconds total):
-        0.00 – 0.80s   3D-tilted page card scales 0.95 → 1.0
+        0.00 â€“ 0.80s   3D-tilted page card scales 0.95 â†’ 1.0
                        Navbar / title / CTA fade in (staggered)
-        0.12 – 2.80s   Title keywords glow synced to ASR words:
+        0.12 â€“ 2.80s   Title keywords glow synced to ASR words:
                          "1" "long" "video" "10" "viral" "clips"
-        3.08 – 4.08s   Page content scrolls up 280 px (programmatic scroll feel)
+        3.08 â€“ 4.08s   Page content scrolls up 280 px (programmatic scroll feel)
                        Carousel section fades in + scales from 0.9
-        3.58 – 8.84s   Main video pops forward in 3D (translateZ 80 px) + scales up
+        3.58 â€“ 8.84s   Main video pops forward in 3D (translateZ 80 px) + scales up
                        Radial spotlight dims the surroundings; decays at end
-          (attack 0→1 then decay 1→REST_LEVEL). All visual effects (color,
+          (attack 0â†’1 then decay 1â†’REST_LEVEL). All visual effects (color,
           text-shadow, scale) derive from --glow via CSS calc()
         - Pop-target uses the same --glow pattern; translateZ + scale derived
         - Spotlight is a separate overlay with simple opacity tween
@@ -178,7 +178,7 @@
       }
 
       /* ============================================================
-         SCROLL CONTENT — GSAP tweens its y
+         SCROLL CONTENT â€” GSAP tweens its y
          ============================================================ */
       .scroll-content {
         padding-top: 140px;
@@ -224,7 +224,7 @@
       }
 
       /* ============================================================
-         KEYWORD GLOW — all derived from --glow CSS custom property
+         KEYWORD GLOW â€” all derived from --glow CSS custom property
          ============================================================ */
       .kw {
         --glow: 0;
@@ -346,7 +346,7 @@
         font-weight: 300;
       }
 
-      /* Main video — Phase 4 pop-out target */
+      /* Main video â€” Phase 4 pop-out target */
       .carousel-main {
         --glow: 0;
         width: 720px;
@@ -499,11 +499,11 @@
               <span class="nav-brand">OpusClip</span>
             </div>
             <div class="nav-center">
-              <span class="nav-item">Features<span class="chev">▾</span></span>
-              <span class="nav-item">Solutions<span class="chev">▾</span></span>
-              <span class="nav-item">Resources<span class="chev">▾</span></span>
+              <span class="nav-item">Features<span class="chev">â–¾</span></span>
+              <span class="nav-item">Solutions<span class="chev">â–¾</span></span>
+              <span class="nav-item">Resources<span class="chev">â–¾</span></span>
               <span class="nav-item">Pricing</span>
-              <span class="nav-item">For business<span class="chev">▾</span></span>
+              <span class="nav-item">For business<span class="chev">â–¾</span></span>
               <span class="nav-item"><span class="nav-tag">New</span>Agent Opus</span>
             </div>
             <div class="nav-right">
@@ -555,7 +555,7 @@
 
             <!-- Video carousel section -->
             <div class="carousel-wrap" id="carousel">
-              <div class="carousel-arrow">‹</div>
+              <div class="carousel-arrow">â€¹</div>
 
               <div class="carousel-main pop-target" id="pop-target">
                 <div class="carousel-main-placeholder">
@@ -563,10 +563,10 @@
                 </div>
               </div>
 
-              <div class="carousel-arrow">›</div>
+              <div class="carousel-arrow">â€º</div>
 
               <div class="carousel-side">
-                <div class="carousel-side-placeholder">Demo · reframe</div>
+                <div class="carousel-side-placeholder">Demo Â· reframe</div>
                 <div class="presets-stack">
                   <div class="preset-label">Presets</div>
                   <div class="preset-tile"></div>
@@ -589,7 +589,7 @@
 
     <script>
       /* ================================================================
-         TIMING — all in local seconds (scene starts at 0).
+         TIMING â€” all in local seconds (scene starts at 0).
          ASR timestamps are direct from the source, with SCENE_START = 16
          subtracted to get local time.
          ================================================================ */
@@ -624,8 +624,8 @@
 
         // Phase 4: pop-out + spotlight
         popStart: 3.58,
-        popAttackDur: 0.67, // ramp 0 → 1
-        popDecayDur: 0.33, // ramp 1 → 0.5 near end
+        popAttackDur: 0.67, // ramp 0 â†’ 1
+        popDecayDur: 0.33, // ramp 1 â†’ 0.5 near end
         popEnd: 8.84,
         popRestLevel: 0.5,
       };
@@ -683,8 +683,8 @@
       );
 
       /* ----------------------------------------------------------------
-         PHASE 2: Keyword glows — two tweens per word.
-         Attack (0 → 1) + decay (1 → REST_LEVEL). GSAP holds REST forever.
+         PHASE 2: Keyword glows â€” two tweens per word.
+         Attack (0 â†’ 1) + decay (1 â†’ REST_LEVEL). GSAP holds REST forever.
          ---------------------------------------------------------------- */
       document.querySelectorAll(".kw").forEach((kw) => {
         const start = Number(kw.dataset.glowStart);
@@ -755,5 +755,10 @@
         TIMING.popEnd - TIMING.popDecayDur,
       );
     </script>
-  </body>
+  <div class="mobile-cta">
+  <a href="/contact" class="btn btn-lime">Book a free demo</a>
+</div>
+<script src="/cookie-banner.js" defer></script>
+</body>
 </html>
+
