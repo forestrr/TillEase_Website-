@@ -1,258 +1,255 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up a POS System for a New Restaurant in Dubai | TillEase Blog</title>
-<meta name="description" content="Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai. Covers hardware, menu setup, KDS, and VAT compliance.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to Set Up a POS System for a New Restaurant in Dubai">
-<meta property="og:description" content="Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai. Covers hardware, menu setup, KDS, and VAT compliance.">
-<meta property="og:url" content="https://tillease.co/blog/setup-pos-new-restaurant-dubai">
-<meta property="og:image" content="https://tillease.co/assets/og-image.png">
-<meta property="og:site_name" content="TillEase">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://tillease.co/blog/setup-pos-new-restaurant-dubai">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tillease.co/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tillease.co/blog/"},{"@type":"ListItem","position":3,"name":"Set Up POS New Restaurant Dubai","item":"https://tillease.co/blog/setup-pos-new-restaurant-dubai"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Set Up a POS System for a New Restaurant in Dubai","description":"Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai.","image":"https://tillease.co/assets/logo.png","author":{"@type":"Person","name":"Vajid TT"},"publisher":{"@type":"Organization","name":"TillEase","logo":{"@type":"ImageObject","url":"https://tillease.co/assets/logo.png"}},"datePublished":"2026-08-13","dateModified":"2026-08-13","mainEntityOfPage":{"@type":"WebPage","@id":"https://tillease.co/blog/setup-pos-new-restaurant-dubai"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What hardware do I need for a restaurant POS in Dubai?","acceptedAnswer":{"@type":"Answer","text":"At minimum: a Windows PC or tablet, a thermal receipt printer, and a cash drawer. Most restaurants also add a kitchen display system (KDS) or kitchen printer, and a customer-facing display."}},{"@type":"Question","name":"How long does it take to set up a restaurant POS?","acceptedAnswer":{"@type":"Answer","text":"Basic setup with menu entry, printer configuration, and staff training typically takes 1-3 days. Complex multi-terminal setups with KDS and delivery integration may take up to a week."}},{"@type":"Question","name":"Do I need a POS system before my restaurant opens in Dubai?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dubai Municipality and the FTA require proper billing and tax invoicing from day one. Having your POS configured before opening avoids compliance issues and operational chaos on launch day."}}]}</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVS31CFK08"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TVS31CFK08');</script>
-<style>
-#read-bar{position:fixed;top:0;left:0;height:3px;background:var(--lime);width:0%;z-index:200;border-right:2px solid var(--ink);}
-.art-header{background:var(--navy);border-bottom:2px solid var(--ink);padding:52px 0 44px;position:relative;overflow:hidden;}
-.art-header::after{content:"";position:absolute;top:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,rgba(198,255,62,.07) 0%,transparent 70%);pointer-events:none;}
-.art-header .wrap{position:relative;z-index:1;}
-.art-bc{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-.art-bc a{color:var(--off-white);text-decoration:none;}.art-bc a:hover{color:var(--lime);}
-.art-cat{display:inline-flex;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);background:var(--lime);padding:4px 10px;border:2px solid var(--ink);margin-bottom:16px;}
-.art-header h1{font-size:clamp(24px,3.2vw,38px);color:var(--off-white);max-width:22ch;margin:0 0 14px;line-height:1.18;letter-spacing:-.025em;}
-.art-deck{font-size:15px;color:var(--off-white);opacity:.82;max-width:56ch;margin:0 0 24px;line-height:1.65;}
-.art-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;}
-.art-meta-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
-.art-meta-item svg{width:13px;height:13px;color:var(--lime);flex:none;}
-.art-body{padding:60px 0 80px;background:var(--off-white);}
-.art-layout{display:grid;grid-template-columns:1fr 264px;gap:52px;align-items:start;max-width:var(--max);margin:0 auto;padding:0 28px;}
-@media(max-width:900px){.art-layout{grid-template-columns:1fr;}.art-sidebar{display:none;}}
-.art-prose{font-size:16px;line-height:1.78;color:var(--slate);min-width:0;}
-.art-prose p{margin:0 0 16px;}
-.art-prose strong{color:var(--ink);font-weight:700;}
-.art-prose h2{font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--ink);margin:44px 0 14px;padding:20px 20px 16px;background:var(--white);border:2px solid var(--ink);border-left:6px solid var(--lime);letter-spacing:-.02em;line-height:1.2;}
-.art-prose h2:first-child{margin-top:0;}
-.art-prose h3{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--navy);margin:26px 0 8px;letter-spacing:-.01em;}
-.art-prose ul{list-style:none;padding:0;margin:0 0 18px;border-left:4px solid var(--lime);padding-left:18px;}
-.art-prose ul li{padding:7px 0;font-size:15px;border-bottom:1px solid rgba(0,0,0,.06);color:var(--slate);line-height:1.55;}
-.art-prose ul li:last-child{border-bottom:none;}
-.pullquote{background:var(--navy);border:2px solid var(--ink);padding:22px 26px;margin:28px 0;border-left:6px solid var(--lime);}
-.pullquote p{color:var(--off-white);margin:0;font-size:14px;line-height:1.6;}
-.pullquote strong{color:var(--lime);}
-.art-faq-item{border-top:2px solid var(--ink);padding:16px 0;transition:padding-left .2s,background .2s;}
-.art-faq-item:hover{padding-left:10px;background:rgba(198,255,62,.07);}
-.art-faq-item h3{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 6px;}
-.art-faq-item p{font-size:14px;margin:0;color:var(--slate);line-height:1.6;}
-.art-sidebar{position:sticky;top:88px;}
-.stoc{background:var(--white);border:2px solid var(--ink);padding:22px;margin-bottom:20px;}
-.stoc h4{font-family:var(--font-body);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink);}
-.stoc ol{list-style:none;padding:0;margin:0;counter-reset:t;}
-.stoc ol li{counter-increment:t;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;}
-.stoc ol li:last-child{border-bottom:none;}
-.stoc ol li a{color:var(--slate);font-weight:500;display:flex;gap:8px;align-items:baseline;transition:color .15s;text-decoration:none;}
-.stoc ol li a::before{content:counter(t,decimal-leading-zero);font-size:10px;font-weight:700;color:var(--lime);background:var(--ink);padding:2px 5px;flex:none;}
-.stoc ol li a:hover{color:var(--ink);}
-.scta{background:var(--navy);border:2px solid var(--ink);padding:22px;}
-.scta p{font-size:13px;color:var(--off-white);margin:0 0 14px;line-height:1.5;opacity:.85;}
-.scta strong{color:var(--lime);}
-.scta .btn{width:100%;justify-content:center;font-size:12px;}
-.art-related{background:var(--white);border-top:2px solid var(--ink);padding:52px 0;}
-.art-related h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 24px;font-family:var(--font-body);}
-.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-@media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
-.rel-card{border:2px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--off-white);text-decoration:none;transition:all .2s cubic-bezier(0.2,0,0,1);}
-.rel-card:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink);}
-.rel-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);background:var(--lime);padding:2px 8px;display:inline-block;align-self:flex-start;border:1px solid var(--ink);}
-.rel-card h3{font-size:14px;font-weight:700;color:var(--ink);margin:0;line-height:1.3;}
-.rel-arr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--slate);margin-top:4px;}
-.rel-card:hover .rel-arr{color:var(--ink);}
-</style>
-</head>
-<body>
-<div id="read-bar"></div>
-<header class="site">
-  <div class="wrap">
-    <a href="/" class="logo" aria-label="TillEase Homepage">
-      <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo"></picture>
-    </a>
-    <nav class="primary"><ul>
-      <li><a href="/retail">Retail</a></li><li><a href="/restaurant">Restaurant</a></li><li><a href="/laundry">Laundry</a></li><li><a href="/salon">Salon</a></li><li><a href="/blog/" class="active">Blog</a></li><li><a href="/pricing">Pricing</a></li>
-    </ul></nav>
-    <div class="nav-cta"><a href="/contact" class="btn btn-lime">Book a demo</a></div>
-  </div>
-</header>
-
-<div class="art-header">
-  <div class="wrap">
-    <nav class="art-bc" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>Restaurant POS Setup</span></nav>
-    <span class="art-cat">Setup Guide</span>
-    <h1>Opening a Restaurant in Dubai? Here's How to Set Up Your POS From Scratch.</h1>
-    <p class="art-deck">The step-by-step checklist first-time restaurant owners actually need — from hardware shopping to printing your first KOT on opening night.</p>
-    <div class="art-meta">
-      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 min read</div>
-      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>August 2026</div>
-      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Vajid TT</div>
-    </div>
-  </div>
-</div>
-
-<div class="art-body">
-  <div class="art-layout">
-    <article class="art-prose" id="article-content">
-
-      <p>You have signed your lease, finalised the menu, and hired your first staff. Now comes the question every new Dubai restaurant owner Googles at 2 AM: <strong>"How do I actually set up a POS system?"</strong></p>
-      <p>This is the practical, no-fluff checklist — from what hardware to buy to making sure your first customer gets a VAT-compliant receipt.</p>
-
-      <h2 id="step-1">Step 1: Choose Your Hardware</h2>
-      <p>You do not need expensive proprietary terminals. A restaurant POS in Dubai runs perfectly on standard hardware:</p>
-      <ul>
-        <li><strong>Main terminal</strong> — a Windows PC, laptop, or all-in-one touchscreen (AED 1,500 - 3,500)</li>
-        <li><strong>Thermal receipt printer</strong> — 80mm USB or network printer (AED 300 - 600)</li>
-        <li><strong>Cash drawer</strong> — connects to the receipt printer (AED 200 - 400)</li>
-        <li><strong>Kitchen printer or KDS</strong> — a second printer or a mounted screen in the kitchen to receive orders (AED 400 - 1,500)</li>
-        <li><strong>Optional: Customer display</strong> — a small screen showing the order total to the customer</li>
-      </ul>
-
-      <div class="pullquote">
-        <p><strong>Pro tip:</strong> Buy standard, off-the-shelf hardware. Avoid vendors that force you into proprietary tablets or locked-down devices — you will pay a premium and lose flexibility.</p>
-      </div>
-
-      <h2 id="step-2">Step 2: Install and Configure the Software</h2>
-      <p>Once your hardware is ready:</p>
-      <ul>
-        <li><strong>Install the POS software</strong> on your main terminal</li>
-        <li><strong>Enter your business details</strong> — trade license name, address, TRN (Tax Registration Number)</li>
-        <li><strong>Set up your receipt template</strong> — ensure it includes the mandatory "Tax Invoice" header, TRN, and sequential invoice numbering</li>
-        <li><strong>Connect your printers</strong> — assign one for customer receipts, one (or more) for kitchen order tickets (KOTs)</li>
-        <li><strong>Configure payment methods</strong> — cash, card (linked to your bank terminal), and any digital wallets</li>
-      </ul>
-
-      <h2 id="step-3">Step 3: Build Your Menu in the POS</h2>
-      <p>This is where most new owners spend the most time — and it is worth getting right:</p>
-      <ul>
-        <li><strong>Create categories</strong> — Starters, Mains, Desserts, Beverages, Combos</li>
-        <li><strong>Add every item</strong> with its price, VAT rate (5% standard or 0% if exempt), and a short name for the kitchen ticket</li>
-        <li><strong>Set up modifiers</strong> — "No onion", "Extra cheese", "Spicy" — these print on the KOT so the kitchen knows exactly what to prepare</li>
-        <li><strong>Create combos/deals</strong> — meal deals with automatic pricing and individual KOT routing</li>
-        <li><strong>Assign items to kitchen printers</strong> — hot food to the main kitchen printer, cold drinks to the bar printer</li>
-      </ul>
-
-      <h2 id="step-4">Step 4: Set Up Staff Access and Roles</h2>
-      <ul>
-        <li><strong>Create user accounts</strong> for each cashier or waiter</li>
-        <li><strong>Assign permission levels</strong> — cashiers can take orders but not void sales; managers can access reports and apply discounts</li>
-        <li><strong>Enable shift management</strong> — opening and closing cash counts to track accountability per shift</li>
-      </ul>
-
-      <h2 id="step-5">Step 5: Run a Full Test Service</h2>
-      <p>Before your first real customer walks in:</p>
-      <ul>
-        <li><strong>Place 10-15 test orders</strong> covering every category, modifier, and payment method</li>
-        <li><strong>Verify KOTs print correctly</strong> at every kitchen station</li>
-        <li><strong>Check the receipt</strong> — is the TRN correct? Is "Tax Invoice" printed? Is the VAT breakdown showing?</li>
-        <li><strong>Simulate an internet outage</strong> — unplug the router and confirm the POS still takes orders and prints receipts</li>
-        <li><strong>Run the end-of-day report</strong> — verify the sales total, VAT total, and payment breakdown match your test orders</li>
-      </ul>
-
-      <h2 id="step-6">Step 6: Go Live with Confidence</h2>
-      <p>On opening day, your POS should be invisible — it just works. Your staff focuses on customers, not on troubleshooting software. That only happens if Steps 1-5 are done properly before the doors open.</p>
-
-      <h2 id="faq">Frequently Asked Questions</h2>
-      <div>
-        <div class="art-faq-item">
-          <h3>What hardware do I need for a restaurant POS in Dubai?</h3>
-          <p>At minimum: a Windows PC or tablet, a thermal receipt printer, and a cash drawer. Most restaurants also add a kitchen display system (KDS) or kitchen printer for order routing, and optionally a customer-facing display.</p>
-        </div>
-        <div class="art-faq-item">
-          <h3>How long does it take to set up a restaurant POS?</h3>
-          <p>Basic setup with menu entry, printer configuration, and staff training typically takes 1-3 days. Complex multi-terminal setups with KDS and delivery integration may take up to a week.</p>
-        </div>
-        <div class="art-faq-item">
-          <h3>Do I need a POS system before my restaurant opens in Dubai?</h3>
-          <p>Yes. Dubai Municipality and the FTA require proper billing and tax invoicing from day one. Having your POS configured before opening avoids compliance issues and operational chaos on launch day.</p>
-        </div>
-      </div>
-
-      <h2 id="final">Bottom Line</h2>
-      <p>Setting up a restaurant POS is not complicated — it is just methodical. Buy standard hardware, configure your menu and VAT settings carefully, test everything under realistic conditions, and you will be ready to serve your first customer without a single billing hiccup.</p>
-
-    </article>
-
-    <aside class="art-sidebar">
-      <div class="stoc">
-        <h4>In this article</h4>
-        <ol>
-          <li><a href="#step-1">Choose hardware</a></li>
-          <li><a href="#step-2">Install &amp; configure</a></li>
-          <li><a href="#step-3">Build your menu</a></li>
-          <li><a href="#step-4">Staff access &amp; roles</a></li>
-          <li><a href="#step-5">Run a test service</a></li>
-          <li><a href="#step-6">Go live</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ol>
-      </div>
-      <div class="scta">
-        <p>Opening soon? Get <strong>TillEase Restaurant</strong> set up on your menu before launch day — free on-site demo included.</p>
-        <a href="/contact" class="btn btn-lime">Book a Free Demo</a>
-      </div>
-    </aside>
-  </div>
-</div>
-
-<section class="art-related">
-  <div class="wrap">
-    <h2>More from the blog</h2>
-    <div class="rel-grid">
-      <a href="/blog/offline-vs-cloud-pos" class="rel-card">
-        <span class="rel-tag">Technology</span>
-        <h3>Offline vs Cloud POS: What Works Best for UAE Restaurants?</h3>
-        <span class="rel-arr">Read article &rarr;</span>
-      </a>
-      <a href="/blog/pos-software-cost-uae" class="rel-card">
-        <span class="rel-tag">Pricing</span>
-        <h3>How Much Does POS Software Actually Cost in the UAE?</h3>
-        <span class="rel-arr">Read article &rarr;</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="site">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-col">
-        <a href="/" class="logo" style="margin-bottom:14px;"><picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo" loading="lazy"></picture></a>
-        <p style="font-size:14px;max-width:30ch;">Hybrid POS software (Cloud &amp; Offline) for small businesses across the UAE. Proudly serving Ajman, Dubai, Abu Dhabi, and beyond.</p>
-      </div>
-      <div class="foot-col"><h5>Industries</h5><ul><li><a href="/retail">Retail</a></li><li><a href="/restaurant">Restaurant</a></li><li><a href="/laundry">Laundry</a></li><li><a href="/salon">Salon</a></li></ul></div>
-      <div class="foot-col"><h5>Company</h5><ul><li><a href="/blog/">Blog</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div>
-      <div class="foot-col"><h5>Support</h5><ul><li><a href="/contact">Book a demo</a></li><li><a href="/contact">AMC support plans</a></li></ul></div>
-    </div>
-    <div class="foot-bottom"><span>&copy; 2026 TillEase Business Software Solutions</span><span>Ajman, United Arab Emirates</span></div>
-  </div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="/three-bg.js" defer></script>
-<script>window.addEventListener('scroll',()=>{const d=document.documentElement;const p=(d.scrollTop||document.body.scrollTop)/(d.scrollHeight-d.clientHeight)*100;document.getElementById('read-bar').style.width=p+'%';});</script>
-<div class="mobile-cta">
-  <a href="/contact" class="btn btn-lime">Book a free demo</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Up a POS System for a New Restaurant in Dubai | TillEase Blog</title>
+<meta name="description" content="Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai. Covers hardware, menu setup, KDS, and VAT compliance.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Set Up a POS System for a New Restaurant in Dubai">
+<meta property="og:description" content="Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai. Covers hardware, menu setup, KDS, and VAT compliance.">
+<meta property="og:url" content="https://tillease.co/blog/setup-pos-new-restaurant-dubai">
+<meta property="og:image" content="https://tillease.co/assets/og-image.png">
+<meta property="og:site_name" content="TillEase">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tillease.co/blog/setup-pos-new-restaurant-dubai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tillease.co/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tillease.co/blog/"},{"@type":"ListItem","position":3,"name":"Set Up POS New Restaurant Dubai","item":"https://tillease.co/blog/setup-pos-new-restaurant-dubai"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Set Up a POS System for a New Restaurant in Dubai","description":"Step-by-step guide to choosing, installing, and configuring a POS system for your new restaurant or cafe in Dubai.","image":"https://tillease.co/assets/logo.png","author":{"@type":"Person","name":"Vajid TT"},"publisher":{"@type":"Organization","name":"TillEase","logo":{"@type":"ImageObject","url":"https://tillease.co/assets/logo.png"}},"datePublished":"2026-08-13","dateModified":"2026-08-13","mainEntityOfPage":{"@type":"WebPage","@id":"https://tillease.co/blog/setup-pos-new-restaurant-dubai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What hardware do I need for a restaurant POS in Dubai?","acceptedAnswer":{"@type":"Answer","text":"At minimum: a Windows PC or tablet, a thermal receipt printer, and a cash drawer. Most restaurants also add a kitchen display system (KDS) or kitchen printer, and a customer-facing display."}},{"@type":"Question","name":"How long does it take to set up a restaurant POS?","acceptedAnswer":{"@type":"Answer","text":"Basic setup with menu entry, printer configuration, and staff training typically takes 1-3 days. Complex multi-terminal setups with KDS and delivery integration may take up to a week."}},{"@type":"Question","name":"Do I need a POS system before my restaurant opens in Dubai?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dubai Municipality and the FTA require proper billing and tax invoicing from day one. Having your POS configured before opening avoids compliance issues and operational chaos on launch day."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVS31CFK08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TVS31CFK08');</script>
+<style>
+#read-bar{position:fixed;top:0;left:0;height:3px;background:var(--lime);width:0%;z-index:200;border-right:2px solid var(--ink);}
+.art-header{background:var(--navy);border-bottom:2px solid var(--ink);padding:52px 0 44px;position:relative;overflow:hidden;}
+.art-header::after{content:"";position:absolute;top:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,rgba(198,255,62,.07) 0%,transparent 70%);pointer-events:none;}
+.art-header .wrap{position:relative;z-index:1;}
+.art-bc{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.art-bc a{color:var(--off-white);text-decoration:none;}.art-bc a:hover{color:var(--lime);}
+.art-cat{display:inline-flex;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);background:var(--lime);padding:4px 10px;border:2px solid var(--ink);margin-bottom:16px;}
+.art-header h1{font-size:clamp(24px,3.2vw,38px);color:var(--off-white);max-width:22ch;margin:0 0 14px;line-height:1.18;letter-spacing:-.025em;}
+.art-deck{font-size:15px;color:var(--off-white);opacity:.82;max-width:56ch;margin:0 0 24px;line-height:1.65;}
+.art-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;}
+.art-meta-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
+.art-meta-item svg{width:13px;height:13px;color:var(--lime);flex:none;}
+.art-body{padding:60px 0 80px;background:var(--off-white);}
+.art-layout{display:grid;grid-template-columns:1fr 264px;gap:52px;align-items:start;max-width:var(--max);margin:0 auto;padding:0 28px;}
+@media(max-width:900px){.art-layout{grid-template-columns:1fr;}.art-sidebar{display:none;}}
+.art-prose{font-size:16px;line-height:1.78;color:var(--slate);min-width:0;}
+.art-prose p{margin:0 0 16px;}
+.art-prose strong{color:var(--ink);font-weight:700;}
+.art-prose h2{font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--ink);margin:44px 0 14px;padding:20px 20px 16px;background:var(--white);border:2px solid var(--ink);border-left:6px solid var(--lime);letter-spacing:-.02em;line-height:1.2;}
+.art-prose h2:first-child{margin-top:0;}
+.art-prose h3{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--navy);margin:26px 0 8px;letter-spacing:-.01em;}
+.art-prose ul{list-style:none;padding:0;margin:0 0 18px;border-left:4px solid var(--lime);padding-left:18px;}
+.art-prose ul li{padding:7px 0;font-size:15px;border-bottom:1px solid rgba(0,0,0,.06);color:var(--slate);line-height:1.55;}
+.art-prose ul li:last-child{border-bottom:none;}
+.pullquote{background:var(--navy);border:2px solid var(--ink);padding:22px 26px;margin:28px 0;border-left:6px solid var(--lime);}
+.pullquote p{color:var(--off-white);margin:0;font-size:14px;line-height:1.6;}
+.pullquote strong{color:var(--lime);}
+.art-faq-item{border-top:2px solid var(--ink);padding:16px 0;transition:padding-left .2s,background .2s;}
+.art-faq-item:hover{padding-left:10px;background:rgba(198,255,62,.07);}
+.art-faq-item h3{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 6px;}
+.art-faq-item p{font-size:14px;margin:0;color:var(--slate);line-height:1.6;}
+.art-sidebar{position:sticky;top:88px;}
+.stoc{background:var(--white);border:2px solid var(--ink);padding:22px;margin-bottom:20px;}
+.stoc h4{font-family:var(--font-body);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink);}
+.stoc ol{list-style:none;padding:0;margin:0;counter-reset:t;}
+.stoc ol li{counter-increment:t;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;}
+.stoc ol li:last-child{border-bottom:none;}
+.stoc ol li a{color:var(--slate);font-weight:500;display:flex;gap:8px;align-items:baseline;transition:color .15s;text-decoration:none;}
+.stoc ol li a::before{content:counter(t,decimal-leading-zero);font-size:10px;font-weight:700;color:var(--lime);background:var(--ink);padding:2px 5px;flex:none;}
+.stoc ol li a:hover{color:var(--ink);}
+.scta{background:var(--navy);border:2px solid var(--ink);padding:22px;}
+.scta p{font-size:13px;color:var(--off-white);margin:0 0 14px;line-height:1.5;opacity:.85;}
+.scta strong{color:var(--lime);}
+.scta .btn{width:100%;justify-content:center;font-size:12px;}
+.art-related{background:var(--white);border-top:2px solid var(--ink);padding:52px 0;}
+.art-related h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 24px;font-family:var(--font-body);}
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+@media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+.rel-card{border:2px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--off-white);text-decoration:none;transition:all .2s cubic-bezier(0.2,0,0,1);}
+.rel-card:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink);}
+.rel-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);background:var(--lime);padding:2px 8px;display:inline-block;align-self:flex-start;border:1px solid var(--ink);}
+.rel-card h3{font-size:14px;font-weight:700;color:var(--ink);margin:0;line-height:1.3;}
+.rel-arr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--slate);margin-top:4px;}
+.rel-card:hover .rel-arr{color:var(--ink);}
+</style>
+</head>
+<body>
+<div id="read-bar"></div>
+<header class="site">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="TillEase Homepage">
+      <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo"></picture>
+    </a>
+    <nav class="primary"><ul>
+      <li><a href="/retail">Retail</a></li><li><a href="/restaurant">Restaurant</a></li><li><a href="/laundry">Laundry</a></li><li><a href="/salon">Salon</a></li><li><a href="/blog/" class="active">Blog</a></li><li><a href="/pricing">Pricing</a></li>
+    </ul></nav>
+    <div class="nav-cta"><a href="/contact" class="btn btn-lime">Book a demo</a></div>
+  </div>
+</header>
+
+<div class="art-header">
+  <div class="wrap">
+    <nav class="art-bc" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>Restaurant POS Setup</span></nav>
+    <span class="art-cat">Setup Guide</span>
+    <h1>Opening a Restaurant in Dubai? Here's How to Set Up Your POS From Scratch.</h1>
+    <p class="art-deck">The step-by-step checklist first-time restaurant owners actually need — from hardware shopping to printing your first KOT on opening night.</p>
+    <div class="art-meta">
+      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 min read</div>
+      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>August 2026</div>
+      <div class="art-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Vajid TT</div>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+  <div class="art-layout">
+    <article class="art-prose" id="article-content">
+
+      <p>You have signed your lease, finalised the menu, and hired your first staff. Now comes the question every new Dubai restaurant owner Googles at 2 AM: <strong>"How do I actually set up a POS system?"</strong></p>
+      <p>This is the practical, no-fluff checklist — from what hardware to buy to making sure your first customer gets a VAT-compliant receipt.</p>
+
+      <h2 id="step-1">Step 1: Choose Your Hardware</h2>
+      <p>You do not need expensive proprietary terminals. A restaurant POS in Dubai runs perfectly on standard hardware:</p>
+      <ul>
+        <li><strong>Main terminal</strong> — a Windows PC, laptop, or all-in-one touchscreen (AED 1,500 - 3,500)</li>
+        <li><strong>Thermal receipt printer</strong> — 80mm USB or network printer (AED 300 - 600)</li>
+        <li><strong>Cash drawer</strong> — connects to the receipt printer (AED 200 - 400)</li>
+        <li><strong>Kitchen printer or KDS</strong> — a second printer or a mounted screen in the kitchen to receive orders (AED 400 - 1,500)</li>
+        <li><strong>Optional: Customer display</strong> — a small screen showing the order total to the customer</li>
+      </ul>
+
+      <div class="pullquote">
+        <p><strong>Pro tip:</strong> Buy standard, off-the-shelf hardware. Avoid vendors that force you into proprietary tablets or locked-down devices — you will pay a premium and lose flexibility.</p>
+      </div>
+
+      <h2 id="step-2">Step 2: Install and Configure the Software</h2>
+      <p>Once your hardware is ready:</p>
+      <ul>
+        <li><strong>Install the POS software</strong> on your main terminal</li>
+        <li><strong>Enter your business details</strong> — trade license name, address, TRN (Tax Registration Number)</li>
+        <li><strong>Set up your receipt template</strong> — ensure it includes the mandatory "Tax Invoice" header, TRN, and sequential invoice numbering</li>
+        <li><strong>Connect your printers</strong> — assign one for customer receipts, one (or more) for kitchen order tickets (KOTs)</li>
+        <li><strong>Configure payment methods</strong> — cash, card (linked to your bank terminal), and any digital wallets</li>
+      </ul>
+
+      <h2 id="step-3">Step 3: Build Your Menu in the POS</h2>
+      <p>This is where most new owners spend the most time — and it is worth getting right:</p>
+      <ul>
+        <li><strong>Create categories</strong> — Starters, Mains, Desserts, Beverages, Combos</li>
+        <li><strong>Add every item</strong> with its price, VAT rate (5% standard or 0% if exempt), and a short name for the kitchen ticket</li>
+        <li><strong>Set up modifiers</strong> — "No onion", "Extra cheese", "Spicy" — these print on the KOT so the kitchen knows exactly what to prepare</li>
+        <li><strong>Create combos/deals</strong> — meal deals with automatic pricing and individual KOT routing</li>
+        <li><strong>Assign items to kitchen printers</strong> — hot food to the main kitchen printer, cold drinks to the bar printer</li>
+      </ul>
+
+      <h2 id="step-4">Step 4: Set Up Staff Access and Roles</h2>
+      <ul>
+        <li><strong>Create user accounts</strong> for each cashier or waiter</li>
+        <li><strong>Assign permission levels</strong> — cashiers can take orders but not void sales; managers can access reports and apply discounts</li>
+        <li><strong>Enable shift management</strong> — opening and closing cash counts to track accountability per shift</li>
+      </ul>
+
+      <h2 id="step-5">Step 5: Run a Full Test Service</h2>
+      <p>Before your first real customer walks in:</p>
+      <ul>
+        <li><strong>Place 10-15 test orders</strong> covering every category, modifier, and payment method</li>
+        <li><strong>Verify KOTs print correctly</strong> at every kitchen station</li>
+        <li><strong>Check the receipt</strong> — is the TRN correct? Is "Tax Invoice" printed? Is the VAT breakdown showing?</li>
+        <li><strong>Simulate an internet outage</strong> — unplug the router and confirm the POS still takes orders and prints receipts</li>
+        <li><strong>Run the end-of-day report</strong> — verify the sales total, VAT total, and payment breakdown match your test orders</li>
+      </ul>
+
+      <h2 id="step-6">Step 6: Go Live with Confidence</h2>
+      <p>On opening day, your POS should be invisible — it just works. Your staff focuses on customers, not on troubleshooting software. That only happens if Steps 1-5 are done properly before the doors open.</p>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div>
+        <div class="art-faq-item">
+          <h3>What hardware do I need for a restaurant POS in Dubai?</h3>
+          <p>At minimum: a Windows PC or tablet, a thermal receipt printer, and a cash drawer. Most restaurants also add a kitchen display system (KDS) or kitchen printer for order routing, and optionally a customer-facing display.</p>
+        </div>
+        <div class="art-faq-item">
+          <h3>How long does it take to set up a restaurant POS?</h3>
+          <p>Basic setup with menu entry, printer configuration, and staff training typically takes 1-3 days. Complex multi-terminal setups with KDS and delivery integration may take up to a week.</p>
+        </div>
+        <div class="art-faq-item">
+          <h3>Do I need a POS system before my restaurant opens in Dubai?</h3>
+          <p>Yes. Dubai Municipality and the FTA require proper billing and tax invoicing from day one. Having your POS configured before opening avoids compliance issues and operational chaos on launch day.</p>
+        </div>
+      </div>
+
+      <h2 id="final">Bottom Line</h2>
+      <p>Setting up a restaurant POS is not complicated — it is just methodical. Buy standard hardware, configure your menu and VAT settings carefully, test everything under realistic conditions, and you will be ready to serve your first customer without a single billing hiccup.</p>
+
+    </article>
+
+    <aside class="art-sidebar">
+      <div class="stoc">
+        <h4>In this article</h4>
+        <ol>
+          <li><a href="#step-1">Choose hardware</a></li>
+          <li><a href="#step-2">Install &amp; configure</a></li>
+          <li><a href="#step-3">Build your menu</a></li>
+          <li><a href="#step-4">Staff access &amp; roles</a></li>
+          <li><a href="#step-5">Run a test service</a></li>
+          <li><a href="#step-6">Go live</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+      <div class="scta">
+        <p>Opening soon? Get <strong>TillEase Restaurant</strong> set up on your menu before launch day — free on-site demo included.</p>
+        <a href="/contact" class="btn btn-lime">Book a Free Demo</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="art-related">
+  <div class="wrap">
+    <h2>More from the blog</h2>
+    <div class="rel-grid">
+      <a href="/blog/offline-vs-cloud-pos" class="rel-card">
+        <span class="rel-tag">Technology</span>
+        <h3>Offline vs Cloud POS: What Works Best for UAE Restaurants?</h3>
+        <span class="rel-arr">Read article &rarr;</span>
+      </a>
+      <a href="/blog/pos-software-cost-uae" class="rel-card">
+        <span class="rel-tag">Pricing</span>
+        <h3>How Much Does POS Software Actually Cost in the UAE?</h3>
+        <span class="rel-arr">Read article &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="/" class="logo" style="margin-bottom:14px;"><picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="TillEase Hybrid POS Software UAE Logo" width="180" height="50" class="brand-logo" loading="lazy"></picture></a>
+        <p style="font-size:14px;max-width:30ch;">Hybrid POS software (Cloud &amp; Offline) for small businesses across the UAE. Proudly serving Ajman, Dubai, Abu Dhabi, and beyond.</p>
+      </div>
+      <div class="foot-col"><h5>Industries</h5><ul><li><a href="/retail">Retail</a></li><li><a href="/restaurant">Restaurant</a></li><li><a href="/laundry">Laundry</a></li><li><a href="/salon">Salon</a></li></ul></div>
+      <div class="foot-col"><h5>Company</h5><ul><li><a href="/blog/">Blog</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div class="foot-col"><h5>Support</h5><ul><li><a href="/contact">Book a demo</a></li><li><a href="/contact">AMC support plans</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>&copy; 2026 TillEase Business Software Solutions</span><span>Ajman, United Arab Emirates</span></div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="/three-bg.js" defer></script>
+<script>window.addEventListener('scroll',()=>{const d=document.documentElement;const p=(d.scrollTop||document.body.scrollTop)/(d.scrollHeight-d.clientHeight)*100;document.getElementById('read-bar').style.width=p+'%';});</script>
 <script src="/cookie-banner.js" defer></script>
-</body>
-</html>
-
-
+</body>
+</html>
+
+

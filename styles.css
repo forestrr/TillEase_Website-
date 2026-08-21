@@ -420,28 +420,7 @@ footer.site { border-top: 2px solid var(--ink); padding: 80px 0 40px; background
   display: inline-block;
 }
 
-/* ---------- Sticky Mobile CTA ---------- */
-.mobile-cta {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--navy);
-  padding: 16px;
-  z-index: 100;
-  border-top: 2px solid var(--ink);
-  text-align: center;
-}
-.mobile-cta .btn {
-  width: 100%;
-  justify-content: center;
-}
-@media (max-width: 768px) {
-  .mobile-cta {
-    display: block;
-  }
-}
+
 
 /* ---------- Cookie Consent Banner ---------- */
 .cookie-banner {
