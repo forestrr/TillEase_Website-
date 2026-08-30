@@ -498,3 +498,228 @@ footer.site { border-top: 2px solid var(--ink); padding: 80px 0 40px; background
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ============================================
+   TillEase — Sleek Rounded Rectangle WhatsApp CTA
+   with Hover Conversation Micro-Animation
+   Colors: White #FFFFFF · Lime #C6FF3E · Black #1B1F2A
+   ============================================ */
+.wa-floating-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 990;
+  opacity: 0;
+  transform: translateY(16px) scale(0.95);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wa-floating-cta.wa-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Floating Conversation Bubbles on Hover */
+.wa-convo-popup {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+  width: max-content;
+  max-width: 260px;
+}
+
+.wa-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  box-shadow: 3px 3px 0 var(--navy);
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  transform-origin: bottom right;
+  transition: opacity 0.25s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Bubble 1: Inbound White Bubble */
+.wa-bubble-1 {
+  background: var(--white);
+  border-radius: 12px 12px 12px 3px;
+  align-self: flex-start;
+  transition-delay: 0s;
+}
+
+.wa-bubble-badge {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Bubble 2: Outbound Lime Green Bubble */
+.wa-bubble-2 {
+  background: var(--lime);
+  border-radius: 12px 12px 3px 12px;
+  align-self: flex-end;
+  transition-delay: 0.08s;
+}
+
+/* Trigger animation when hovering over floating CTA */
+.wa-floating-cta:hover .wa-bubble-1 {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.wa-floating-cta:hover .wa-bubble-2 {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.1s;
+}
+
+/* Rounded Rectangle CTA Button */
+.wa-rect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  padding: 6px 12px 6px 7px;
+  box-shadow: 4px 4px 0 var(--navy), 0 10px 25px rgba(27, 31, 42, 0.08);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.22s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s ease;
+}
+
+.wa-rect-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--navy), 0 14px 28px rgba(198, 255, 62, 0.25);
+  background: var(--white);
+}
+
+.wa-rect-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--navy);
+}
+
+.wa-rect-btn:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* Icon container with lime fill and rounded edges */
+.wa-icon-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--lime);
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.wa-rect-btn:hover .wa-icon-container {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.wa-svg {
+  display: block;
+}
+
+/* Beacon live dot */
+.wa-dot-beacon {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #059669;
+  border: 1.5px solid var(--white);
+}
+
+/* Chat text label */
+.wa-btn-text {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  line-height: 1;
+}
+
+/* Sleek dark action arrow badge */
+.wa-btn-icon-arrow {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--navy);
+  color: var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s ease, color 0.2s ease;
+}
+
+.wa-rect-btn:hover .wa-btn-icon-arrow {
+  transform: translate(2px, -2px);
+  background: var(--lime);
+  color: var(--navy);
+}
+
+.wa-arrow {
+  display: block;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 640px) {
+  .wa-floating-cta {
+    bottom: 18px;
+    right: 18px;
+  }
+  .wa-rect-btn {
+    padding: 5px 10px 5px 6px;
+    gap: 7px;
+    border-radius: 10px;
+  }
+  .wa-icon-container {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+  .wa-icon-container svg {
+    width: 16px;
+    height: 16px;
+  }
+  .wa-btn-text {
+    font-size: 13px;
+  }
+  .wa-btn-icon-arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .wa-convo-popup {
+    bottom: calc(100% + 8px);
+  }
+  .wa-bubble {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
