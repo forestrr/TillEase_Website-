@@ -405,7 +405,7 @@ blogs = [
 for blog in blogs:
     html = template
     for k, v in blog.items():
-        html = html.replace(f"{{k}}", v)
+        html = html.replace(f"[[{k}]]", v)
     with open(f"blog/{blog['slug']}.html", "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Created blog/{blog['slug']}.html")
